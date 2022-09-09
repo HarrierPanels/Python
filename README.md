@@ -1,1 +1,1 @@
-Python scrips
+Python scripts

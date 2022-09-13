@@ -16,7 +16,7 @@ def solv_square(a,b,c):
    print("The equation has 2 roots:\n x1 =",x1,"\n","x2 =",x2)
   elif d == 0:
    x = (-b + math.sqrt(d))/(2*a)
-   load.simplebar("  Computing roots:", ": ███████████████████ 100%")
+   load.simplebar("  Computing the root:", ": ████████████████ 100%")
    print("The equation has 1 root:\nx=",x)
 
   else:

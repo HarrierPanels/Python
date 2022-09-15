@@ -14,18 +14,19 @@ QUESTIONS = tomllib.loads(QUESTIONS_PATH.read_text())
 # Driver
 def run_quiz():
     questions = prepare_questions(
-        QUESTIONS, num_questions=NUM_QUESTIONS_PER_QUIZ
+        QUESTIONS_PATH, num_questions=NUM_QUESTIONS_PER_QUIZ
     )
 
     num_correct = 0
-    for num, (question, alternatives) in enumerate(questions, start=1):
+    for num, question in enumerate(questions, start=1):
         print(f"\nQuestion {num}:")
-        num_correct += ask_question(question, alternatives)
+        num_correct += ask_question(question)
 
     print(f"\nYou got {num_correct} correct out of {num} questions")
 
 # Preprocessing
-def prepare_questions(questions, num_questions):
+def prepare_questions(path, num_questions):
+    questions = tomllib.loads(path.read_text())["questions"]
     num_questions = min(num_questions, len(questions))
     return random.sample(list(questions.items()), k=num_questions)
 
@@ -50,10 +51,11 @@ def get_answer(question, alternatives):
 
 # Get answer
 def ask_question(question, alternatives):
-    correct_answer = alternatives[0]
+    correct_answer = question["answer"]
+    alternatives = [question["answer"]] + question["alternatives"]
     ordered_alternatives = random.sample(alternatives, k=len(alternatives))
 
-    answer = get_answer(question, ordered_alternatives)
+    answer = get_answer(question["question"], ordered_alternatives)
     if answer == correct_answer:
         print("⭐ Correct! ⭐")
         return 1

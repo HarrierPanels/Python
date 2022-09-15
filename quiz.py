@@ -49,9 +49,16 @@ def get_answer(question, alternatives):
     labeled_alternatives = dict(zip(ascii_lowercase, alternatives))
     for label, alternative in labeled_alternatives.items():
         print(f"  {label}) {alternative}")
+    # No Walrus    
+    while True:
+    	answer_label = input(f"\nWhat's your choice? ")
+    	if answer_label in labeled_alternatives:
+        	break
+    	print(f"Please answer one of {', '.join(labeled_alternatives)}")
 
-    while (answer_label := input("\nChoice? ")) not in labeled_alternatives:
-        print(f"Please answer one of {', '.join(labeled_alternatives)}")
+# Python 3.8 Walrus       
+#    while (answer_label := input("\nChoice? ")) not in labeled_alternatives:
+#        print(f"Please answer one of {', '.join(labeled_alternatives)}")
 
     return labeled_alternatives[answer_label]
 

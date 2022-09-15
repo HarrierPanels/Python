@@ -1,5 +1,7 @@
 from string import ascii_lowercase
+import random
 
+NUM_QUESTIONS_PER_QUIZ = 5
 QUESTIONS = {
     "What's the purpose of the built-in zip() function": [
         "To iterate over two or more sequences at the same time",
@@ -15,17 +17,29 @@ QUESTIONS = {
     ]
 }
 
+num_questions = min(NUM_QUESTIONS_PER_QUIZ, len(QUESTIONS))
+questions = random.sample(list(QUESTIONS.items()), k=num_questions)
+
 num_correct = 0
-for num, (question, alternatives) in enumerate(QUESTIONS.items(), start=1):
+for num, (question, alternatives) in enumerate(questions, start=1):
     print(f"\nQuestion {num}:")
     print(f"{question}?")
     correct_answer = alternatives[0]
-    labeled_alternatives = dict(zip(ascii_lowercase, sorted(alternatives)))
+    labeled_alternatives = dict(
+        zip(ascii_lowercase, random.sample(alternatives, k=len(alternatives)))
+    )
     for label, alternative in labeled_alternatives.items():
         print(f"  {label}) {alternative}")
 
-    answer_label = input("\nChoice? ")
-    answer = labeled_alternatives.get(answer_label)
+    # No Walrus    
+    while True:
+    answer_label = input(f"\nWhat's your choice? ")
+    if answer_label in labeled_alternatives:
+        break
+    print(f"Please answer one of {', '.join(labeled_alternatives)}")
+
+    answer = labeled_alternatives[answer_label]
+
     if answer == correct_answer:
         num_correct += 1
         print("⭐ Correct! ⭐")

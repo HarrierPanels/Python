@@ -9,7 +9,6 @@ except ModuleNotFoundError:
 
 NUM_QUESTIONS_PER_QUIZ = 5
 QUESTIONS_PATH = pathlib.Path(__file__).parent / "questions.toml"
-QUESTIONS = tomllib.loads(QUESTIONS_PATH.read_text())
 
 # Driver
 def run_quiz():
@@ -28,29 +27,10 @@ def run_quiz():
 def prepare_questions(path, num_questions):
     questions = tomllib.loads(path.read_text())["questions"]
     num_questions = min(num_questions, len(questions))
-    return random.sample(list(questions.items()), k=num_questions)
+    return random.sample(questions, k=num_questions)
 
-# Ask Questions
-def get_answer(question, alternatives):
-    print(f"{question}?")
-    labeled_alternatives = dict(zip(ascii_lowercase, alternatives))
-    for label, alternative in labeled_alternatives.items():
-        print(f"  {label}) {alternative}")
-    # No Walrus    
-    while True:
-    	answer_label = input(f"\nWhat's your choice? ")
-    	if answer_label in labeled_alternatives:
-        	break
-    	print(f"Please answer one of {', '.join(labeled_alternatives)}")
-        
-# Python 3.8 Walrus       
-#    while (answer_label := input("\nChoice? ")) not in labeled_alternatives:
-#        print(f"Please answer one of {', '.join(labeled_alternatives)}")
-
-    return labeled_alternatives[answer_label]
-
-# Get answer
-def ask_question(question, alternatives):
+# Ask questions
+def ask_question(question):
     correct_answer = question["answer"]
     alternatives = [question["answer"]] + question["alternatives"]
     ordered_alternatives = random.sample(alternatives, k=len(alternatives))
@@ -62,7 +42,26 @@ def ask_question(question, alternatives):
     else:
         print(f"The answer is {correct_answer!r}, not {answer!r}")
         return 0
-   
+
+# Get answer    
+def get_answer(question, alternatives):
+    print(f"{question}?")
+    labeled_alternatives = dict(zip(ascii_lowercase, alternatives))
+    for label, alternative in labeled_alternatives.items():
+        print(f"  {label}) {alternative}")
+    # No Walrus    
+    while True:
+    	answer_label = input(f"\nWhat's your choice? ")
+    	if answer_label in labeled_alternatives:
+        	break
+    	print(f"Please answer one of {', '.join(labeled_alternatives)}")
+
+# Python 3.8 Walrus       
+#    while (answer_label := input("\nChoice? ")) not in labeled_alternatives:
+#        print(f"Please answer one of {', '.join(labeled_alternatives)}")
+
+    return labeled_alternatives[answer_label]
+
 # Driver call
 if __name__ == "__main__":
     run_quiz()

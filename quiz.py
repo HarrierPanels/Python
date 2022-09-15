@@ -33,10 +33,10 @@ for num, (question, alternatives) in enumerate(questions, start=1):
 
     # No Walrus    
     while True:
-    answer_label = input(f"\nWhat's your choice? ")
-    if answer_label in labeled_alternatives:
-        break
-    print(f"Please answer one of {', '.join(labeled_alternatives)}")
+    	answer_label = input(f"\nWhat's your choice? ")
+    	if answer_label in labeled_alternatives:
+        	break
+    	print(f"Please answer one of {', '.join(labeled_alternatives)}")
 
     answer = labeled_alternatives[answer_label]
 

@@ -1,5 +1,5 @@
 # Global
-import pathlib, random
+import pathlib, random, emoji
 from string import ascii_lowercase
 
 try:
@@ -51,7 +51,7 @@ def ask_question(question):
         hint=question.get("hint"),
     )
     if set(answers) == set(correct_answers):
-        print("⭐ Correct! ⭐")
+        print(emoji.emojize("Correct! :thumbs_up:"))
         correct = True
     else:
         is_or_are = " is" if len(correct_answers) == 1 else "s are"

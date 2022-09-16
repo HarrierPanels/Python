@@ -299,44 +299,6 @@ label = "Network Protocols"
         "as binary-decimal numbers separated by '-'",
     ]
 
-
-[test]
-label = "test"
-
-    [[test.questions]]
-    question = "Which are the correct compact presentation forms for an IPv6\naddress FE80:0000:0000:0100:0000:0000:0000:0123"
-    answers = ["FE80:0:0:100::123", "FE80:0:0:100:0:0:0:123"]
-    alternatives = [
-        "FE80::100::123",
-        "FE80::1:0000:0000:0000:123",
-    ] 
-    
-   
-    [[test.questions]]
-    question = "Which addresses in any IPv4 network are always reserved?"
-    answers = ["network address", "broadcast address for this network"]
-    alternatives = [
-        "first available address for default gateway",
-        "last available address for default gateway",
-        "each odd address for better balancing",
-    ] 
-    hint = "In IPv4 there are two IPs that cannot be assigned to any devices."
-    explanation = """
-    Each network or subnet has a reserved broadcast address 
-    that can be used by all participants of the network to 
-    send a broadcast. Broadcasts allow information and services 
-    to be transmitted to all devices and components of the 
-    network without the need to know their individual IP 
-    addresses. 
-        
-    Among other things, routers in a local area network use 
-    the broadcast IP to send HELLO packets to all endpoints, 
-    switches, and other routers to maintain interrelationships 
-    on the network and discover neighboring devices. These are 
-    the Network ID and the Broadcast IP address.
-    """
-
-
 [python]
 label = "Python"
 

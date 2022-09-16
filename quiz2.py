@@ -42,10 +42,11 @@ def ask_question(question):
     )
     if set(answers) == set(correct_answers):
         print("⭐ Correct! ⭐")
-        return 1
+        correct = True
     else:
         is_or_are = " is" if len(correct_answers) == 1 else "s are"
         print("\n- ".join([f"No, the answer{is_or_are}:"] + correct_answers))
+        correct = False
 
     if "explanation" in question:
         print(f"\nEXPLANATION:\n{question['explanation']}")

@@ -62,10 +62,11 @@ def get_answers(question, alternatives, num_choices=1):
             continue
 
         if any(
-            # Python 3.8 Walrus # (invalid := answer) not in labeled_alternatives
-            invalid = answer
-    	    if invalid in labeled_alternatives:
-        	    break            
+            # Python 3.8 Walrus # 
+            (invalid := answer) not in labeled_alternatives
+#            invalid = answer
+#    	    if invalid in labeled_alternatives:
+#        	    break            
             for answer in answers
         ):
             print(

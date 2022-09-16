@@ -8,7 +8,7 @@ except ModuleNotFoundError:
     import tomli as tomllib
 
 NUM_QUESTIONS_PER_TEST = 30
-QUESTIONS_PATH = pathlib.Path(__file__).parent / "questions.toml"
+QUESTIONS_PATH = pathlib.Path(__file__).parent / "questions2.toml"
 
 # Driver
 def run_test():

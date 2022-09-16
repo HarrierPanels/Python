@@ -9,7 +9,7 @@ label = "Basic networking"
     [[basicnetworking.questions]]
     question = "What does network topology defines"
     answers = [
-        "A description of the network configuration, diagram\n\tand connection of network devices.",
+        "A description of the network configuration, diagram\n    and connection of network devices.",
     ]
     alternatives = [
         "Diagram of location of computers in the network.", 

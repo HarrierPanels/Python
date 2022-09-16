@@ -61,16 +61,12 @@ def get_answers(question, alternatives, num_choices=1):
             print(f"Please answer {num_choices} alternative{plural_s}")
             continue
 
-        if any(
-            # Python 3.8 Walrus # 
-            # (invalid := answer) not in labeled_alternatives
-            invalid = answer
-    	    if invalid in labeled_alternatives
-        	    break            
-            for answer in answers
-        ):
+        invalid = [
+            answer for answer in answers if answer not in labeled_alternatives
+        ]
+        if invalid:
             print(
-                f"{invalid!r} is not a valid choice. "
+                f"{invalid[0]} is not a valid choice. "
                 f"Please use {', '.join(labeled_alternatives)}"
             )
             continue

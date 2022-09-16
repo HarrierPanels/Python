@@ -199,14 +199,101 @@ label = "Basic networking"
 label = "Network Protocols"
 
     [[networkprotocols.questions]]
-    question = "There are 2 rules in the routing table: 1. 10.0.0.0 255.255.255.0 10.0.0.1\nand 2. 10.0.0.0 255.255.255.240 10.0.0.2. Packets for recipient 10.0.0.8\nwill be sent to the gateway"
-    answers = ["10.0.0.2"]
-    alternatives = ["10.0.0.1", "10.0.0.0", "255.255.255.0", "255.255.255.240"] 
-
-    [[networkprotocols.questions]]
-    question = "A broadcast address at the data-link layer is:"
+    question = "A broadcast address at the data-link layer is: "
     answers = ["FF:FF:FF:FF:FF:FF"]
     alternatives = ["255.255.255.255", "00:00:00:00:00:00", "0.0.0.0"]  
+
+    [[networkprotocols.questions]]
+    question = "Choose the correct statement: "
+    answers = ["The ARP protocol is designed to determine the MAC address\n     based on the IP address"]
+    alternatives = [
+        "ARP is running on port 53", 
+        "ARP is used in both IPv4 and IPv6 networks", 
+        "ARP protocol is designed to determine the IP address\n     based on the MAC address",
+    ] 
+    hint = "ARP works between Layers 2 and 3 of the OSI model."
+    explanation = """
+    Address Resolution Protocol (ARP) is a procedure for mapping a dynamic IP 
+    address to a permanent physical machine address in a local area network (LAN). 
+    The physical machine address is also known as a media access control (MAC) 
+    address.
+    """
+
+    [[networkprotocols.questions]]
+    question = "The TCP protocol is: "
+    answers = ["reliable", "connection orientated"]
+    alternatives = ["lightweight", "correct", "faster then UDP"]  
+
+    [[networkprotocols.questions]]
+    question = "The sliding window mechanism in TCP is used for: "
+    answers = ["better utilization of network bandwidth"]
+    alternatives = [
+        "increasing the reliability of data delivery", 
+        "establishing a connection between the client and the server", 
+        "increasing the size of the data segment being transmitted",
+    ] 
+
+    [[networkprotocols.questions]]
+    question = "The set SYN flag indicates that: "
+    answers = ["the client and server go through the 'handshake' phase,\n     establishing the connection"]
+    alternatives = [
+        "the server waits for the data segment with the number of the first\n     byte specified in the Sequence number field", 
+        "the server waits for the data segment with the number of the first\n     byte specified in the Acknowledgment number field", 
+        "the client and server are ready to transmit data segments",
+    ] 
+    hint = "SYN (synchronize): Packets that are used to initiate a connection."
+    explanation = """
+    SYN - The synchronisation flag is used as a first step in establishing a three way 
+    handshake between two hosts. Only the first packet from both the sender and receiver 
+    should have this flag set. The following diagram illustrates a three way handshake 
+    process. 
+    """
+    
+    [[networkprotocols.questions]]
+    question = "The UDP protocol is: "
+    answers = ["lightweight", "faster then TCP"]
+    alternatives = ["connection orientated", "correct"]  
+
+    [[networkprotocols.questions]]
+    question = "The UDP pseudo-header is used for: "
+    answers = ["checksum calculation"]
+    alternatives = ["formation of the IP header", "improvement of delivery reliability", "All choices"]  
+
+    [[networkprotocols.questions]]
+    question = "Choose the correct statements: "
+    answers = ["UDP transfers data faster than TCP", "UDP is used in streaming services and online games"]
+    alternatives = ["Minimum UDP header length is 6 bytes", "The checksum in UDP is mandatary"] 
+
+    [[networkprotocols.questions]]
+    question = "Choose the correct statements: "
+    answers = [
+        "Ping and traceroute use ICMP protocol", 
+        "If the recipient is out of network, the client will receive\n     a Destination unreachable message",
+    ]
+    alternatives = [
+        "If the ICMP message is lost, it is retransmitted", 
+        "ICMP is used to control the data rate on the network",
+    ] 
+
+    [[networkprotocols.questions]]
+    question = "Choose the correct statements: "
+    answers = [
+        "HTTP protocol runs on port 80 over TCP protocol", 
+        "Registered ports are assigned by IANA for specific service\n     upon application by a requesting entity",
+    ]
+    alternatives = [
+        "The total number of TCP ports is 1024", 
+        "Ephemeral ports used by system processes that provide\n     widely used types of network services",
+    ] 
+
+    [[networkprotocols.questions]]
+    question = "How is an IPv6 address displayed"
+    answers = ["as hexadecimal numbers separated by ':'"]
+    alternatives = [
+        "as decimal numbers separated by dots",
+        "as binary numbers separated by ':'",
+        "as binary-decimal numbers separated by '-'",
+    ]
 
 [python]
 label = "Python"

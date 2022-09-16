@@ -28,6 +28,132 @@ label = "Basic networking"
     alternatives = ["Channel thruput", "Amount of the computer's RAM", "Processor productivity"]
 
     [[basicnetworking.questions]]
+    question = "What makes it impossible to connect a computer to a local network"
+    answers = ["Lack of network adapter"]
+    alternatives = ["Channel thruput", "Limited hard disk size", "No serial port"]
+
+    [[basicnetworking.questions]]
+    question = "The following transmission media are usually used in computer networks"
+    answers = ["All choices"]
+    alternatives = ["Radio", "Twisted pair", "Optical fiber"]
+
+    [[basicnetworking.questions]]
+    question = "What is the advantage of using a mesh topology"
+    answers = ["High reliability and fault tolerance"]
+    alternatives = ["Minimum number of connections", "Simple network scaling", "Low cost"]
+
+    [[basicnetworking.questions]]
+    question = "What topology is the basis of the global Internet"
+    answers = ["Mesh"]
+    alternatives = ["Star", "Tree", "Ring"]
+
+    [[basicnetworking.questions]]
+    question = "A MAC address is"
+    answers = ["the physical address of the network interface"]
+    alternatives = [
+        "physical address of the computer",
+        "logical address of the computer",
+        "the logical address to which all packets on the network are sent",
+    ]
+
+    [[basicnetworking.questions]]
+    question = "What type of address directly ensures the delivery of frames between computers within a shared local network"
+    answers = ["MAC address"]
+    alternatives = ["IP address", "Domain name", "NetBIOS name"]
+
+    [[basicnetworking.questions]]
+    question = "How many bits are the length of a MAC address"
+    answers = ["48"]
+    alternatives = ["32", "128", "64"]
+
+    [[basicnetworking.questions]]
+    question = "A MAC address is associated with which layer of the OSI model"
+    answers = ["data-link"]
+    alternatives = ["physical", "network", "transport"]
+
+    [[basicnetworking.questions]]
+    question = "An IP address is associated with which layer of the OSI model"
+    answers = ["network"]
+    alternatives = ["physical", "data-link", "transport"]   
+
+    [[basicnetworking.questions]]
+    question = "What type of address directly ensures the delivery of packets between computers on the global Internet"
+    answers = ["IP address"]
+    alternatives = ["MAC address", "WEB address", "TCP address"]    
+    
+    [[basicnetworking.questions]]
+    question = "The prefix in the IP address indicates"
+    answers = ["the number of leading ones in the subnet mask"]
+    alternatives = [
+        "the number of leading zeros in the subnet mask",
+        "the maximum number of computers in the subnet",
+        "the maximum number of subnets",
+    ]    
+    
+    [[basicnetworking.questions]]
+    question = "What are the parts of an IP address in IPv4"
+    answers = ["network ID", "host ID"]
+    alternatives = ["manufacturer ID of the network adapter", "The IP address is not structured"]        
+    
+    [[basicnetworking.questions]]
+    question = "The number of bytes in an IPv4 address"
+    answers = ["4"]
+    alternatives = ["32", "8", "64"]     
+    
+    [[basicnetworking.questions]]
+    question = "How is an IPv6 address displayed"
+    answers = ["as hexadecimal numbers separated by ":""]
+    alternatives = [
+        "as decimal numbers separated by dots",
+        "as binary numbers separated by ":"",
+        "as binary-decimal numbers separated by "-"",
+    ]
+ 
+    [[basicnetworking.questions]]
+    question = "Which are the correct compact presentation forms for an IPv6 address FE80:0000:0000:0100:0000:0000:0000:0123?"
+    answers = ["FE80:0:0:100::123", "FE80:0:0:100:0:0:0:123"]
+    alternatives = [
+        "FE80::100::123",
+        "FE80::1:0000:0000:0000:123",
+    ] 
+ 
+    [[basicnetworking.questions]]
+    question = "What is a network prefix"
+    answers = [
+        "decimal number equal to the number of bits\n     of the subnet mask set to one",
+    ]
+    alternatives = [
+        "a hexadecimal number equal to the number of bits\n     of the subnet mask set to one", 
+        "a decimal number equal to the number of bits\n     of the subnet mask set to zero", 
+        "the first octet of the IP address",
+    ] 
+ 
+    [[basicnetworking.questions]]
+    question = "Which addresses in any IPv4 network are always reserved?"
+    answers = ["network address", "broadcast address for this network"]
+    alternatives = [
+        "first available address for default gateway",
+        "last available address for default gateway",
+        "each odd address for better balancing",
+    ] 
+    hint = "In IPv4 there are two IPs that cannot be assigned to any devices."
+    explanation = """
+        Each network or subnet has a reserved broadcast address that can be used 
+        by all participants of the network to send a broadcast. Broadcasts allow 
+        information and services to be transmitted to all devices and components 
+        of the network without the need to know their individual IP addresses. 
+        Among other things, routers in a local area network use the broadcast IP 
+        to send HELLO packets to all endpoints, switches, and other routers to 
+        maintain interrelationships on the network and discover neighboring 
+        devices. These are the Network ID and the Broadcast IP address.
+    """
+
+    [[basicnetworking.questions]]
+    question = "What decimal number is equivalent to a binary number 11111111"
+    answers = ["255"]
+    alternatives = ["16", "8", "64"]  
+    
+    [[basicnetworking.questions]]
     question = "Which of the following address ranges are private"
     answers = ["172.16.0.0/12", "10.0.0.0/8", "192.168.0.0/16"]
     alternatives = [
@@ -44,32 +170,43 @@ label = "Basic networking"
         Class B: 172.16.0.0 to 172.31.255.255
         Class C: 192.168.0.0 to 192.168.255.255
     """
+    
+    [[basicnetworking.questions]]
+    question = "How is the boundary between the network and host portions of an IPv4 address defined in modern networks"
+    answers = ["using the network prefix", "using the subnet mask"]
+    alternatives = ["using classes", "the border is fixed and unchanging"]  
 
-[capitals]
-label = "Capitals"
+    [[basicnetworking.questions]]
+    question = "What is the advantage of using a router in a local network"
+    answers = ["All choices"]
+    alternatives = ["Logical structuring of the network", "Improving network security", "Broadcast traffic filtering"]  
 
-    [[capitals.questions]]
-    question = "What's the capital of Norway"
-    answers = ["Oslo"]
-    hint = "Lars Onsager, Jens Stoltenberg, Trygve Lie, and Børge Ousland."
-    alternatives = ["Stockholm", "Copenhagen", "Helsinki", "Reykjavik"]
-    explanation = """
-    Oslo was founded as a city in the 11th century and established as a
-    trading place. It became the capital of Norway in 1299. The city was
-    destroyed by a fire in 1624 and rebuilt as Christiania, named in honor
-    of the reigning king. The city was renamed back to Oslo in 1925.
-    """
+    [[basicnetworking.questions]]
+    question = "Why do you need a default gateway"
+    answers = ["All packets addressed outside the subnet\n     are sent to this IP address"]
+    alternatives = [
+        "All packets sent to this IP address are bounced back",
+        "A host with this IP address matches the domain\n     name and IP address",
+        "From this IP address, the computer receives the IP address,\n     subnet mask, and DNS server settings",
+    ] 
 
-    [[capitals.questions]]
-    question = "What's the state capital of Texas, USA"
-    answers = ["Austin"]
-    alternatives = ["Harrisburg", "Houston", "Galveston", "Columbia"]
-    hint = "SciPy is held there each year."
-    explanation = """
-    Austin is named in honor of Stephen F. Austin. It was purpose-built to
-    be the capital of Texas and was incorporated in December 1839. Houston,
-    Harrisburg, Columbia, and Galveston are all earlier capitals of Texas.
-    """
+    [[basicnetworking.questions]]
+    question = "There are 2 rules in the routing table: 1. 10.0.0.0 255.255.255.0 10.0.0.1\n     and 2. 10.0.0.0 255.255.255.240 10.0.0.2. Packets for recipient 10.0.0.8 will be sent to the gateway"
+    answers = ["10.0.0.2"]
+    alternatives = ["10.0.0.1", "10.0.0.0", "255.255.255.0", "255.255.255.240"] 
+
+[networkprotocols]
+label = "Network Protocols"
+
+    [[networkprotocols.questions]]
+    question = "There are 2 rules in the routing table: 1. 10.0.0.0 255.255.255.0 10.0.0.1\n     and 2. 10.0.0.0 255.255.255.240 10.0.0.2. Packets for recipient 10.0.0.8 will be sent to the gateway"
+    answers = ["10.0.0.2"]
+    alternatives = ["10.0.0.1", "10.0.0.0", "255.255.255.0", "255.255.255.240"] 
+
+    [[networkprotocols.questions]]
+    question = "A broadcast address at the data-link layer is:"
+    answers = ["FF:FF:FF:FF:FF:FF"]
+    alternatives = ["255.255.255.255", "00:00:00:00:00:00", "0.0.0.0"]  
 
 [python]
 label = "Python"

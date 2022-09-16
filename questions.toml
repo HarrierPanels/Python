@@ -102,11 +102,11 @@ label = "Basic networking"
     
     [[basicnetworking.questions]]
     question = "How is an IPv6 address displayed"
-    answers = ["as hexadecimal numbers separated by ":""]
+    answers = ["as hexadecimal numbers separated by ':'"]
     alternatives = [
         "as decimal numbers separated by dots",
-        "as binary numbers separated by ":"",
-        "as binary-decimal numbers separated by "-"",
+        "as binary numbers separated by ':'",
+        "as binary-decimal numbers separated by '-'",
     ]
  
     [[basicnetworking.questions]]

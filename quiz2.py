@@ -1,5 +1,5 @@
-import pathlib
-import random
+# Global
+import pathlib, import random
 from string import ascii_lowercase
 try:
     import tomllib
@@ -9,6 +9,7 @@ except ModuleNotFoundError:
 NUM_QUESTIONS_PER_QUIZ = 5
 QUESTIONS_PATH = pathlib.Path(__file__).parent / "questions2.toml"
 
+# Driver
 def run_quiz():
     questions = prepare_questions(
         QUESTIONS_PATH, num_questions=NUM_QUESTIONS_PER_QUIZ
@@ -21,11 +22,13 @@ def run_quiz():
 
     print(f"\nYou got {num_correct} correct out of {num} questions")
 
+# Preprocessing    
 def prepare_questions(path, num_questions):
     questions = tomllib.loads(path.read_text())["questions"]
     num_questions = min(num_questions, len(questions))
     return random.sample(questions, k=num_questions)
 
+# Ask questions
 def ask_question(question):
     correct_answers = question["answers"]
     alternatives = question["answers"] + question["alternatives"]
@@ -44,6 +47,7 @@ def ask_question(question):
         print("\n- ".join([f"No, the answer{is_or_are}:"] + correct_answers))
         return 0
 
+# Get answers
 def get_answers(question, alternatives, num_choices=1):
     print(f"{question}?")
     labeled_alternatives = dict(zip(ascii_lowercase, alternatives))
@@ -60,7 +64,8 @@ def get_answers(question, alternatives, num_choices=1):
             plural_s = "" if num_choices == 1 else "s, separated by comma"
             print(f"Please answer {num_choices} alternative{plural_s}")
             continue
-
+            
+        # No Warlus
         invalid = [
             answer for answer in answers if answer not in labeled_alternatives
         ]
@@ -73,5 +78,6 @@ def get_answers(question, alternatives, num_choices=1):
 
         return [labeled_alternatives[answer] for answer in answers]
 
+# Driver call    
 if __name__ == "__main__":
     run_quiz()

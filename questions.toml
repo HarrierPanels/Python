@@ -9,7 +9,8 @@ label = "Basic networking"
     [[basicnetworking.questions]]
     question = "What does network topology defines"
     answers = [
-        "A description of the network configuration, diagram and connection of network devices.",
+        "A description of the network configuration, diagram and 
+        connection of network devices.",
     ]
     alternatives = [
         "Diagram of location of computers in the network.", 
@@ -39,6 +40,7 @@ label = "Basic networking"
     hint = "There are three private address ranges."
     explanation = """
         Address ranges to be used by private networks are:
+        
         Class A: 10.0.0.0 to 10.255.255.255
         Class B: 172.16.0.0 to 172.31.255.255
         Class C: 192.168.0.0 to 192.168.255.255

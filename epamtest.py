@@ -85,8 +85,8 @@ def get_answers(question, alternatives, num_choices=1, hint=None):
 
         # Handle invalid answers
         if len(answers) != num_choices:
-            plural_s = "" if num_choices == 1 else "s, separated by comma"
-            print(f"Please answer {num_choices} alternative{plural_s}")
+            plural_s = "" if num_choices == 1 else "s, separated by comma or space"
+            print(f"Please choose {num_choices} answer{plural_s}")
             continue
             
         # Python 3.6 or older

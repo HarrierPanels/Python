@@ -46,8 +46,12 @@ def ask_question(question):
     else:
         is_or_are = " is" if len(correct_answers) == 1 else "s are"
         print("\n- ".join([f"No, the answer{is_or_are}:"] + correct_answers))
-        return 0
 
+    if "explanation" in question:
+        print(f"\nEXPLANATION:\n{question['explanation']}")
+
+    return 1 if correct else 0
+    
 # Get answers
 def get_answers(question, alternatives, num_choices=1, hint=None):
     print(f"{question}?")

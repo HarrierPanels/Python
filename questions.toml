@@ -191,7 +191,7 @@ label = "Basic networking"
     ] 
 
     [[basicnetworking.questions]]
-    question = "There are 2 rules in the routing table: 1. 10.0.0.0 255.255.255.0 10.0.0.1\n     and 2. 10.0.0.0 255.255.255.240 10.0.0.2. Packets for recipient 10.0.0.8 will be sent to the gateway"
+    question = "There are 2 rules in the routing table: 1. 10.0.0.0 255.255.255.0 10.0.0.1\nand 2. 10.0.0.0 255.255.255.240 10.0.0.2. Packets for recipient\n10.0.0.8 will be sent to the gateway"
     answers = ["10.0.0.2"]
     alternatives = ["10.0.0.1", "10.0.0.0", "255.255.255.0", "255.255.255.240"] 
 
@@ -199,7 +199,7 @@ label = "Basic networking"
 label = "Network Protocols"
 
     [[networkprotocols.questions]]
-    question = "There are 2 rules in the routing table: 1. 10.0.0.0 255.255.255.0 10.0.0.1\n     and 2. 10.0.0.0 255.255.255.240 10.0.0.2. Packets for recipient 10.0.0.8 will be sent to the gateway"
+    question = "There are 2 rules in the routing table: 1. 10.0.0.0 255.255.255.0 10.0.0.1\nand 2. 10.0.0.0 255.255.255.240 10.0.0.2. Packets for recipient\n10.0.0.8 will be sent to the gateway"
     answers = ["10.0.0.2"]
     alternatives = ["10.0.0.1", "10.0.0.0", "255.255.255.0", "255.255.255.240"] 
 

@@ -325,10 +325,10 @@ label = "test"
     ] 
     hint = "SYN (synchronize): Packets that are used to initiate a connection."
     explanation = """
-    SYN - The synchronisation flag is used as a first step in establishing a three way 
-    handshake between two hosts. Only the first packet from both the sender and receiver 
-    should have this flag set. The following diagram illustrates a three way handshake 
-    process. 
+    SYN - The synchronisation flag is used as a first step in establishing 
+    a three way handshake between two hosts. Only the first packet from both
+    the sender and receiver should have this flag set. The following diagram
+    illustrates a three way handshake process. 
     """
     
     [[test.questions]]
@@ -341,10 +341,10 @@ label = "test"
     ] 
     hint = "ARP works between Layers 2 and 3 of the OSI model."
     explanation = """
-    Address Resolution Protocol (ARP) is a procedure for mapping a dynamic IP 
-    address to a permanent physical machine address in a local area network (LAN). 
-    The physical machine address is also known as a media access control (MAC) 
-    address.
+    Address Resolution Protocol (ARP) is a procedure for mapping a dynamic
+    IP address to a permanent physical machine address in a local area 
+    network (LAN). The physical machine address is also known as a media 
+    access control (MAC) address.
     """
 
     [[test.questions]]

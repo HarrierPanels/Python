@@ -28,6 +28,78 @@ label = "Basic networking"
     alternatives = ["Channel thruput", "Amount of the computer's RAM", "Processor productivity"]
 
     [[basicnetworking.questions]]
+    question = "What makes it impossible to connect a computer to a local network"
+    answers = ["Lack of network adapter"]
+    alternatives = ["Channel thruput", "Limited hard disk size", "No serial port"]
+
+    [[basicnetworking.questions]]
+    question = "The following transmission media are usually used in computer networks"
+    answers = ["All choices"]
+    alternatives = ["Radio", "Twisted pair", "Optical fiber"]
+
+    [[basicnetworking.questions]]
+    question = "What is the advantage of using a mesh topology"
+    answers = ["High reliability and fault tolerance"]
+    alternatives = ["Minimum number of connections", "Simple network scaling", "Low cost"]
+
+    [[basicnetworking.questions]]
+    question = "What topology is the basis of the global Internet"
+    answers = ["Mesh"]
+    alternatives = ["Star", "Tree", "Ring"]
+
+    [[basicnetworking.questions]]
+    question = "A MAC address is"
+    answers = ["the physical address of the network interface"]
+    alternatives = [
+        "physical address of the computer",
+        "logical address of the computer",
+        "the logical address to which all packets on the network are sent",
+    ]
+
+    [[basicnetworking.questions]]
+    question = "What type of address directly ensures the delivery of frames between computers within a shared local network"
+    answers = ["MAC address"]
+    alternatives = ["IP address", "Domain name", "NetBIOS name"]
+
+    [[basicnetworking.questions]]
+    question = "How many bits are the length of a MAC address"
+    answers = ["48"]
+    alternatives = ["32", "128", "64"]
+
+    [[basicnetworking.questions]]
+    question = "A MAC address is associated with which layer of the OSI model"
+    answers = ["data-link"]
+    alternatives = ["physical", "network", "transport"]
+
+    [[basicnetworking.questions]]
+    question = "An IP address is associated with which layer of the OSI model"
+    answers = ["network"]
+    alternatives = ["physical", "data-link", "transport"]   
+
+    [[basicnetworking.questions]]
+    question = "What type of address directly ensures the delivery of packets between computers on the global Internet"
+    answers = ["IP address"]
+    alternatives = ["MAC address", "WEB address", "TCP address"]    
+    
+    [[basicnetworking.questions]]
+    question = "The prefix in the IP address indicates"
+    answers = ["the number of leading ones in the subnet mask"]
+    alternatives = [
+        "the number of leading zeros in the subnet mask",
+        "the maximum number of computers in the subnet",
+        "the maximum number of subnets",
+    ]    
+    
+    [[basicnetworking.questions]]
+    question = "What are the parts of an IP address in IPv4"
+    answers = ["network ID", "host ID"]
+    alternatives = ["manufacturer ID of the network adapter", "The IP address is not structured"]        
+    
+    
+    
+    
+    
+    [[basicnetworking.questions]]
     question = "Which of the following address ranges are private"
     answers = ["172.16.0.0/12", "10.0.0.0/8", "192.168.0.0/16"]
     alternatives = [

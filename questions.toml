@@ -8,13 +8,24 @@ label = "Basic networking"
 
     [[basicnetworking.questions]]
     question = "What does network topology defines"
-    answers = ["global network"]
-    alternatives = ["corporate network", "regional network", "local network"]
+    answers = [
+        "A description of the network configuration, diagram and connection of network devices.",
+    ]
+    alternatives = [
+        "Diagram of location of computers in the network.", 
+        "Scheme of interaction of switching equipment.", 
+        "Network security technology.",
+    ]
 
     [[basicnetworking.questions]]
     question = "Which of the following are types of network topology"
     answers = ["Bus, ring, star"]
     alternatives = ["Straight, parallel, cross", "Topological, logical, mixed", "Vector, singularity, parallelism"]
+
+    [[basicnetworking.questions]]
+    question = "What the effectiveness of computer communication usually depends on"
+    answers = ["All choices"]
+    alternatives = ["Channel thruput", "Amount of the computer's RAM", Processor productivity"]
 
     [[basicnetworking.questions]]
     question = "Which of the following address ranges are private"

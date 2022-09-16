@@ -110,7 +110,7 @@ label = "Basic networking"
     ]
  
     [[basicnetworking.questions]]
-    question = "Which are the correct compact presentation forms for an IPv6 address FE80:0000:0000:0100:0000:0000:0000:0123?"
+    question = "Which are the correct compact presentation forms for an IPv6 address FE80:0000:0000:0100:0000:0000:0000:0123"
     answers = ["FE80:0:0:100::123", "FE80:0:0:100:0:0:0:123"]
     alternatives = [
         "FE80::100::123",
@@ -300,20 +300,12 @@ label = "Network Protocols"
 label = "test"
 
     [[test.questions]]
-    question = "What's a PEP"
-    answers = ["A Python Enhancement Proposal"]
+    question = "Which are the correct compact presentation forms for an IPv6 address FE80:0000:0000:0100:0000:0000:0000:0123"
+    answers = ["FE80:0:0:100::123", "FE80:0:0:100:0:0:0:123"]
     alternatives = [
-        "A Pretty Exciting Policy",
-        "A Preciously Evolved Python",
-        "A Potentially Epic Prize",
-    ]
-    hint = "PEPs are used to evolve Python."
-    explanation = """
-    Python Enhancement Proposals (PEPs) are design documents that provide
-    information to the Python community. PEPs are used to propose new features
-    for the Python language, to collect community input on an issue, and to
-    document design decisions made about the language.
-    """
+        "FE80::100::123",
+        "FE80::1:0000:0000:0000:123",
+    ] 
     
     [[test.questions]]
     question = "The set SYN flag indicates that: "
@@ -357,36 +349,18 @@ label = "test"
     ] 
     hint = "In IPv4 there are two IPs that cannot be assigned to any devices."
     explanation = """
-        Each network or subnet has a reserved broadcast address that can be used 
-        by all participants of the network to send a broadcast. Broadcasts allow 
-        information and services to be transmitted to all devices and components 
-        of the network without the need to know their individual IP addresses. 
-        Among other things, routers in a local area network use the broadcast IP 
-        to send HELLO packets to all endpoints, switches, and other routers to 
-        maintain interrelationships on the network and discover neighboring 
+        Each network or subnet has a reserved broadcast address that can
+        be used by all participants of the network to send a broadcast. 
+        Broadcasts allow information and services to be transmitted to all 
+        devices and components of the network without the need to know their 
+        individual IP addresses. 
+        
+        Among other things, routers in a local area network use the broadcast 
+        IP to send HELLO packets to all endpoints, switches, and other routers 
+        to maintain interrelationships on the network and discover neighboring 
         devices. These are the Network ID and the Broadcast IP address.
     """
 
-    [[test.questions]]
-    question = "How can you add a docstring to a function"
-    answers = [
-        "By writing a string literal as the first statement in the function",
-        "By assigning a string to the function's .__doc__ attribute",
-    ]
-    alternatives = [
-        "By using the built-in @docstring decorator",
-        "By returning a string from the function",
-    ]
-    hint = "They're parsed from your code and stored on the function object."
-    explanation = """
-    Docstrings document functions and other Python objects. A docstring is a
-    string literal that occurs as the first statement in a module, function,
-    class, or method definition. Such a docstring becomes the .__doc__ special
-    attribute of that object. See PEP 257 for more information.
-
-    There is no built-in @docstring decorator. Many functions naturally return
-    strings. Such a feature can therefore not be used for docstrings.
-"""
 
 [python]
 label = "Python"

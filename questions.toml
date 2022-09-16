@@ -25,7 +25,7 @@ label = "Basic networking"
     [[basicnetworking.questions]]
     question = "What the effectiveness of computer communication usually depends on"
     answers = ["All choices"]
-    alternatives = ["Channel thruput", "Amount of the computer's RAM", Processor productivity"]
+    alternatives = ["Channel thruput", "Amount of the computer's RAM", "Processor productivity"]
 
     [[basicnetworking.questions]]
     question = "Which of the following address ranges are private"

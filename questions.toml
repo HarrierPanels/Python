@@ -1,6 +1,6 @@
 [[questions]]
 question = "When does __name__ == '__main__' equal True in a Python file"
-answer = "When the file is run as a script"
+answers = "When the file is run as a script"
 alternatives = [
     "When the file is imported as a module", 
     "When the file has a valid name", 
@@ -9,7 +9,7 @@ alternatives = [
 
 [[questions]]
 question = "Which three of the following address ranges are private?"
-answer = ["172.16.0.0/12", "10.0.0.0/8", "192.168.0.0/16"]
+answers = ["172.16.0.0/12", "10.0.0.0/8", "192.168.0.0/16"]
 alternatives = [
     "1.1.1.0/30", 
     "127.0.0.0/24", 
@@ -19,12 +19,12 @@ alternatives = [
 
 [[questions]]
 question = "What's the name of the list-like data structure in TOML"
-answer = "Array"
+answers = "Array"
 alternatives = ["List", "Sequence", "Set"]
 
 [[questions]]
 question = "Which version of Python is the first with TOML support built in"
-answer = "3.11"
+answers = "3.11"
 alternatives = ["3.9", "3.10", "3.12"]
 
 [[questions]]
@@ -34,12 +34,12 @@ alternatives = ["1771", "1871", "1881"]
 
 [[questions]]
 question = "Which built-in function can get information from the user"
-answer = "input"
+answers = "input"
 alternatives = ["get", "print", "write"]
 
 [[questions]]
 question = "What's the purpose of the built-in zip() function"
-answer = "To iterate over two or more sequences at the same time"
+answers = "To iterate over two or more sequences at the same time"
 alternatives = [
     "To combine several strings into one",
     "To compress several files into one archive",
@@ -48,7 +48,7 @@ alternatives = [
 
 [[questions]]
 question = "What does dict.get(key) return if key isn't found in dict"
-answer = "None"
+answers = "None"
 alternatives = ["key", "True", "False"]
 
 [[questions]]
@@ -62,12 +62,12 @@ alternatives = [
 
 [[questions]]
 question = "What's the official name of the := operator"
-answer = "Assignment expression"
+answers = "Assignment expression"
 alternatives = ["Named expression", "Walrus operator", "Colon equals operator"]
 
 [[questions]]
 question = "What's one effect of calling random.seed(42)"
-answer = "The random numbers are reproducible."
+answers = "The random numbers are reproducible."
 alternatives = [
     "The random numbers are more random.",
     "The computer clock is reset.",

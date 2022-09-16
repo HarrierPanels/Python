@@ -299,6 +299,27 @@ label = "Network Protocols"
         "as binary-decimal numbers separated by '-'",
     ]
 
+[subnetting]
+label = "Concept of Subnetting"
+
+    [[subnetting.questions]]
+    question = "What is the largest in capacity classful network"
+    answers = ["A"]
+    alternatives = ["B", "C", "D"] 
+
+    [[subnetting.questions]]
+    question = "The network class is determined by: "
+    answers = ["The first bits of the first byte of the IP address"]
+    alternatives = [
+        "Network mask/prefix", 
+        "The first bits of the last byte of the IP address", 
+        "Internet Services Provider",
+    ] 
+
+
+
+
+
 [python]
 label = "Python"
 

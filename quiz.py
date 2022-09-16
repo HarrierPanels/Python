@@ -1,7 +1,8 @@
 # Global
-from string import ascii_lowercase
-import random
 import pathlib
+import random
+from string import ascii_lowercase
+
 try:
     import tomllib
 except ModuleNotFoundError:
@@ -10,7 +11,7 @@ except ModuleNotFoundError:
 NUM_QUESTIONS_PER_QUIZ = 5
 QUESTIONS_PATH = pathlib.Path(__file__).parent / "questions.toml"
 
-# Driver
+
 def run_quiz():
     questions = prepare_questions(
         QUESTIONS_PATH, num_questions=NUM_QUESTIONS_PER_QUIZ
@@ -23,13 +24,22 @@ def run_quiz():
 
     print(f"\nYou got {num_correct} correct out of {num} questions")
 
-# Preprocessing
+
 def prepare_questions(path, num_questions):
-    questions = tomllib.loads(path.read_text())["questions"]
+    topic_info = tomllib.loads(path.read_text())
+    topics = {
+        topic["label"]: topic["questions"] for topic in topic_info.values()
+    }
+    topic_label = get_answers(
+        question="Which topic do you want to be quizzed about",
+        alternatives=sorted(topics),
+    )[0]
+
+    questions = topics[topic_label]
     num_questions = min(num_questions, len(questions))
     return random.sample(questions, k=num_questions)
 
-# Ask questions
+
 def ask_question(question):
     correct_answers = question["answers"]
     alternatives = question["answers"] + question["alternatives"]
@@ -39,21 +49,27 @@ def ask_question(question):
         question=question["question"],
         alternatives=ordered_alternatives,
         num_choices=len(correct_answers),
+        hint=question.get("hint"),
     )
     if set(answers) == set(correct_answers):
         print("⭐ Correct! ⭐")
-        return 1
+        correct = True
     else:
         is_or_are = " is" if len(correct_answers) == 1 else "s are"
         print("\n- ".join([f"No, the answer{is_or_are}:"] + correct_answers))
-        return 0
+        correct = False
 
-# Get answers    
+    if "explanation" in question:
+        print(f"\nEXPLANATION:\n{question['explanation']}")
+
+    return 1 if correct else 0
+
+
 def get_answers(question, alternatives, num_choices=1, hint=None):
     print(f"{question}?")
     labeled_alternatives = dict(zip(ascii_lowercase, alternatives))
-#    if hint:
-#        labeled_alternatives["?"] = "Hint"
+    if hint:
+        labeled_alternatives["?"] = "Hint"
 
     for label, alternative in labeled_alternatives.items():
         print(f"  {label}) {alternative}")
@@ -64,9 +80,9 @@ def get_answers(question, alternatives, num_choices=1, hint=None):
         answers = set(answer.replace(",", " ").split())
 
         # Handle hints
-#        if hint and "?" in answers:
-#            print(f"\nHINT: {hint}")
-#            continue
+        if hint and "?" in answers:
+            print(f"\nHINT: {hint}")
+            continue
 
         # Handle invalid answers
         if len(answers) != num_choices:
@@ -86,6 +102,6 @@ def get_answers(question, alternatives, num_choices=1, hint=None):
 
         return [labeled_alternatives[answer] for answer in answers]
 
-# Driver call
+
 if __name__ == "__main__":
     run_quiz()

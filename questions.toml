@@ -235,7 +235,7 @@ label = "Network Protocols"
 
     [[networkprotocols.questions]]
     question = "The set SYN flag indicates that: "
-    answers = ["the client and server go through the "handshake" phase,\n     establishing the connection"]
+    answers = ["the client and server go through the 'handshake' phase,\n     establishing the connection"]
     alternatives = [
         "the server waits for the data segment with the number of the first\n     byte specified in the Sequence number field", 
         "the server waits for the data segment with the number of the first\n     byte specified in the Acknowledgment number field", 

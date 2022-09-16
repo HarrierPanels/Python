@@ -1,5 +1,5 @@
 # Global
-import pathlib, import random
+import pathlib, random
 from string import ascii_lowercase
 try:
     import tomllib

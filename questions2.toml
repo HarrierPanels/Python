@@ -1,5 +1,5 @@
 [[questions]]
-question = "Which three of the following address ranges are private?"
+question = "Which three of the following address ranges are private"
 answers = ["172.16.0.0/12", "10.0.0.0/8", "192.168.0.0/16"]
 alternatives = ["1.1.1.0/30", "127.0.0.0/24", "169.254.0.0/16", "193.168.255.0/24"]
 

@@ -1,4 +1,22 @@
-[[questions]]
+[basicnetworking]
+label = "Basic networking"
+
+[[basicnetworking.questions]]
+question = "A connecting of computers and local networks located at a remote distance to share worldwide information resources is called"
+answers = ["global network"]
+alternatives = ["corporate network", "regional network", "local network"]
+
+[[basicnetworking.questions]]
+question = "What does network topology defines"
+answers = ["global network"]
+alternatives = ["corporate network", "regional network", "local network"]
+
+[[basicnetworking.questions]]
+question = "Which of the following are types of network topology"
+answers = ["Bus, ring, star"]
+alternatives = ["Straight, parallel, cross", "Topological, logical, mixed", "Vector, singularity, parallelism"]
+
+[[basicnetworking.questions]]
 question = "Which of the following address ranges are private"
 answers = ["172.16.0.0/12", "10.0.0.0/8", "192.168.0.0/16"]
 alternatives = [
@@ -16,33 +34,10 @@ explanation = """
     Class C: 192.168.0.0 to 192.168.255.255
 """
 
-[[questions]]
-question = "What's the name of the list-like data structure in TOML"
-answers = ["Array"]
-alternatives = ["List", "Sequence", "Set"]
+[python]
+label = "Python"
 
-[[questions]]
-question = "How can you run a Python script named quiz.py"
-answers = ["python quiz.py", "python -m quiz"]
-alternatives = ["python quiz", "python -m quiz.py"]
-hint = "One option uses the filename, and the other uses the module name."
-
-[[questions]]
-question = "What's a PEP"
-answers = ["A Python Enhancement Proposal"]
-alternatives = [
-    "A Pretty Exciting Policy",
-    "A Preciously Evolved Python",
-    "A Potentially Epic Prize",
-    ]
-hint = "PEPs are used to evolve Python."
-explanation = """
-    Python Enhancement Proposals (PEPs) are design documents that provide
-    information to the Python community. PEPs are used to propose new features
-    for the Python language, to collect community input on an issue, and to
-    document design decisions made about the language.
-"""
-[[questions]]
+[[python.questions]]
 question = "How can you add a docstring to a function"
 answers = [
     "By writing a string literal as the first statement in the function",
@@ -59,6 +54,45 @@ explanation = """
     class, or method definition. Such a docstring becomes the .__doc__ special
     attribute of that object. See PEP 257 for more information.
 
-    There is no built-in @docstring decorator. Many functions naturally return
+    There's no built-in @docstring decorator. Many functions naturally return
     strings. Such a feature can therefore not be used for docstrings.
+"""
+
+[[python.questions]]
+question = "When was the first public version of Python released?"
+answers = ["February 1991"]
+alternatives = ["January 1994", "October 2000", "December 2008"]
+hint = "The first public version was labeled version 0.9.0."
+explanation = """
+    Guido van Rossum started work on Python in December 1989. He posted
+    Python v0.9.0 to the alt.sources newsgroup in February 1991. Python
+    reached version 1.0.0 in January 1994. The next major versions,
+    Python 2.0 and Python 3.0, were released in October 2000 and December
+    2008, respectively.
+"""
+
+[capitals]
+label = "Capitals"
+
+[[capitals.questions]]
+question = "What's the capital of Norway"
+answers = ["Oslo"]
+hint = "Lars Onsager, Jens Stoltenberg, Trygve Lie, and Børge Ousland."
+alternatives = ["Stockholm", "Copenhagen", "Helsinki", "Reykjavik"]
+explanation = """
+    Oslo was founded as a city in the 11th century and established as a
+    trading place. It became the capital of Norway in 1299. The city was
+    destroyed by a fire in 1624 and rebuilt as Christiania, named in honor
+    of the reigning king. The city was renamed back to Oslo in 1925.
+"""
+
+[[capitals.questions]]
+question = "What's the state capital of Texas, USA"
+answers = ["Austin"]
+alternatives = ["Harrisburg", "Houston", "Galveston", "Columbia"]
+hint = "SciPy is held there each year."
+explanation = """
+    Austin is named in honor of Stephen F. Austin. It was purpose-built to
+    be the capital of Texas and was incorporated in December 1839. Houston,
+    Harrisburg, Columbia, and Galveston are all earlier capitals of Texas.
 """

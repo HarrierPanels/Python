@@ -316,6 +316,66 @@ label = "Concept of Subnetting"
         "Internet Services Provider",
     ] 
 
+    [[subnetting.questions]]
+    question = "What class does an IP address 141.89.64.111 belong to"
+    answers = ["B"]
+    alternatives = ["A", "C", "D"] 
+
+    [[subnetting.questions]]
+    question = "Choose the correct statement: "
+    answers = ["All choices"]
+    alternatives = [
+        "Netmask cannot contain binary sequence 101", 
+        "The prefix indicates the number of ones in the netmask", 
+        "The mask allows to determine the address of the subnet\n     to which the IP address belongs",
+    ] 
+
+    [[subnetting.questions]]
+    question = "What is a binary form of decimal number 13"
+    answers = ["00001101"]
+    alternatives = ["10000001", "00000111", "00101000"] 
+
+    [[subnetting.questions]]
+    question = "What could be determined by the host IP address and subnet mask"
+    answers = ["All choices"]
+    alternatives = ["Network address", "Broadcast address", "Number of available addresses on a subnet"] 
+
+    [[subnetting.questions]]
+    question = "Formula for calculating the number of available host addresses in a subnet is: "
+    answers = ["2^(32-n)-2"]
+    alternatives = ["2*n+32", "n^2 +1", "2^32-n"] 
+    hint = "n = prefix"
+    explanation = """
+    In simple words the number of hosts in any network can be calculated 
+    with the formula = 2^x – 2, where x is the number of host ID bits in 
+    the IP address that equals 32 - n(prefix).  
+    """
+
+    [[subnetting.questions]]
+    question = "Which IP addresses are private"
+    answers = ["192.168.1.1", "172.16.1.1"]
+    alternatives = ["127.0.0.1", "169.254.1.1"] 
+
+    [[subnetting.questions]]
+    question = "Choose the correct statement: "
+    answers = ["Packets from private networks are not routed to the Internet"]
+    alternatives = [
+        "The use of private networks led to a rapid depletion\n     of the pool of IP addresses", 
+        "Access from a private network to the Internet is not possible", 
+        "All choices",
+    ] 
+
+    [[subnetting.questions]]
+    question = "he last byte of the network IP address is 160,\nthe last byte of the subnet mask is 224.\nCalculate the last byte of the broadcast address for this subnet"
+    answers = ["191"]
+    alternatives = ["192", "161", "159"] 
+    hint = "for .224 mask prefix is /27"
+
+    [[subnetting.questions]]
+    question = "Which IPv4 addresses can be assigned to devices"
+    answers = ["192.168.0.1/24", "172.168.20.111/8", "1.1.1.1/30", "100.100.1.0/15"]
+    alternatives = ["10.10.256.11/12", "10.255.255.255/16"]
+
 [python]
 label = "Python"
 

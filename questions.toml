@@ -341,7 +341,7 @@ label = "Concept of Subnetting"
     alternatives = ["Network address", "Broadcast address", "Number of available addresses on a subnet"] 
 
     [[subnetting.questions]]
-    question = "Formula for calculating the number of available host addresses in a subnet is: "
+    question = "Formula for calculating the number of available host\naddresses in a subnet is: "
     answers = ["2^(32-n)-2"]
     alternatives = ["2*n+32", "n^2 +1", "2^32-n"] 
     hint = "n = prefix"

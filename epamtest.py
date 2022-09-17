@@ -23,6 +23,15 @@ def run_test():
 
     print(f"\nYou got {num_correct} correct out of {num} questions")
 
+    while True:
+        answer = input('Do you want to continue?:')
+        if answer.lower().startswith("y"):
+            print("ok, carry on then")
+            run_test()
+        elif answer.lower().startswith("n"):
+            print("ok, sayonnara")
+            sys.exit()
+    
 # Preprocessing   
 def prepare_questions(path, num_questions):
     topic_info = tomllib.loads(path.read_text())

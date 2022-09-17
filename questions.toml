@@ -523,7 +523,7 @@ label = "5. DHCP"
     alternatives = ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"] 
 
 [test]
-label = "1.5 Test"
+label = "9.1.2 Test"
 
     [[test.questions]]
     question = "Test"
@@ -531,7 +531,7 @@ label = "1.5 Test"
     alternatives = ["test2"] 
 
 [python]
-label = "10. Python"
+label = "9.1.1 Python"
 
     [[python.questions]]
     question     = "When was the first known use of the word 'quiz'"

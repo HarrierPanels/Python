@@ -762,7 +762,7 @@ label = "8. Bash"
     ] 
 
     [[bash.questions]]
-    question = "For all commands the exit status is stored in the special variable: "
+    question = "Which special variable would store the exit status for all commands"
     answers = ["$?"]
     alternatives = ["$0", "$@", "$$", "$#"] 
 
@@ -772,7 +772,7 @@ label = "8. Bash"
     alternatives = ["set +ex", "set +e -x", "set -e +x", "set -ep"] 
 
     [[bash.questions]]
-    question = "How many lines with Hello in output:\ngreet() { for i in `seq $1`; do echo Hello $i; done } && greet '2 5'"
+    question = "How many lines with Hello are in output:\ngreet() { for i in `seq $1`; do echo Hello $i; done } && greet '2 5'"
     answers = ["4"]
     alternatives = ["2", "3", "5", "An error is displayed"] 
     hint = "seq prints a sequence of numbers"

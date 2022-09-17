@@ -1,10 +1,11 @@
 # Credits
-__credits__ = ["Real Python", "HarrierPanels"]
-__version__ = "1.0"
-
 """
-@Description: EPAM DevOps Essentials Quizz & Knowledge Checks tests
-@Links: https://aviasimulator.blogspot.com https://realpython.com/
+@Description: EPAM DevOps Essentials Quizz & Knowledge Check tests
+@Author: HarrierPanels
+@Website: https://aviasimulator.blogspot.com
+@GitHub: https://github.com/HarrierPanels
+@Credits: Real Python, HarrierPanels
+@Links: https://realpython.com
 """
     
 # Global
@@ -18,7 +19,7 @@ except ModuleNotFoundError:
 
 NUM_QUESTIONS_PER_TEST = 30
 QUESTIONS_PATH = pathlib.Path(__file__).parent / "questions.toml"
-print(f"\nWelcome to EPAM DevOps Essentials Quizz & Knowledge Checks tests!\n")
+print(f"\nWelcome to EPAM DevOps Essentials Quizz & Knowledge Check tests!\n")
 
 # Driver
 def run_test():

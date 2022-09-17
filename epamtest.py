@@ -1,3 +1,11 @@
+# Credits
+__credits__ = ["Real Python", "HarrierPanels"]
+__version__ = "1.0"
+
+        """EPAM DevOps Essentials Quizz & Knowledge Checks tests
+        @Links: https://aviasimulator.blogspot.com https://realpython.com/
+        """
+    
 # Global
 import pathlib, random, emoji, sys
 from string import ascii_lowercase

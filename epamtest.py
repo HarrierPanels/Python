@@ -27,7 +27,7 @@ def run_test():
     while True:
         answer = input('\nDo you want to start over or choose another topic [y/n]: ')
         if answer.lower().startswith("y"):
-            print("Ok carry on then")
+            print("Ok carry on then.\n")
             run_test()
         elif answer.lower().startswith("n"):
             print("Ok bye!")

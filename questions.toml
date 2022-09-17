@@ -420,7 +420,6 @@ label = "Virtual LAN"
         ]
     alternatives = [
         "The device belongs to the VLAN solution only\n     by the port to which it is connected", 
-        "To work with VLAN end devices must be able to read\n     the VLAN tag", 
         "All choices",
     ] 
     explanation = """

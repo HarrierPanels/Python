@@ -417,7 +417,7 @@ label = "4. Virtual LAN"
     answers = [
         "VLANS are mutually isolated, and packets can only\n     pass between them through a router",
         "Each VLAN is a broadcast domain, usually with its own\n     IP network",
-        ]
+    ]
     alternatives = [
         "The device belongs to the VLAN solution only\n     by the port to which it is connected", 
         "All choices",
@@ -491,7 +491,7 @@ label = "5. DHCP"
     answers = [
         "DHCP minimizes configuration errors caused by manually\n     configuring an IP address, such as typos or address\n     conflicts.",
         "Centralized and automatic TCP/IP configuration for all\n     clients on the network.",
-        ]
+    ]
     alternatives = [
         "Improved network security.", 
         "Service for updating operating systems and Microsoft products.", 
@@ -521,6 +521,106 @@ label = "5. DHCP"
     question = "When a computer sends DHCP requests and does not\nreceive a response, from which subnet does the computer\nautomatically generate an IP address"
     answers = ["169.254.0.0/16"]
     alternatives = ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"] 
+
+[dns]
+label = "6. DNS"
+
+    [[dns.questions]]
+    question = "What is DNS"
+    answers = ["The system, which associates domain names with the\n     IP addresses of hosts."]
+    alternatives = [
+        "A database that stores information about users, PCs, servers,\n     network and peripheral devices.", 
+        "The service of matching NetBIOS names of computers with IP\n     addresses of hosts.", 
+        "Service for updating operating systems and Microsoft products",
+    ]  
+
+    [[dns.questions]]
+    question = "What protocols and ports are used by DNS"
+    answers = ["TCP/UDP 53"]
+    alternatives = ["TCP/ICMP 80", "TCP/UDP 8080", "TCP/UDP 123"] 
+
+    [[dns.questions]]
+    question = "What are the types of queries that the DNS service uses"
+    answers = ["Recursive", "Iterative", "Reverse"]
+    alternatives = ["Authoritative", "Caching"] 
+
+    [[dns.questions]]
+    question = "What are the types of DNS servers"
+    answers = ["Recursive resolver", "Root nameserver", "TLD nameserver", "Authoritative nameserver"]
+    alternatives = ["Remote nameserver", "Iterative nameserver"] 
+
+    [[dns.questions]]
+    question = "Choose the right DNS query definitions: "
+    answers = [
+        "A recursive query sends a domain name to the DNS server\n     and asks to return the IP address of the requested domain.\n     In this case, the server can access other DNS servers.",
+        "An iterative query sends a domain name to a DNS server\n     and asks to return either the IP address of that domain\n     or the name of another DNS server.",
+        "The reverse request sends an IP and asks to return the\n     domain name.",       
+    ]
+    alternatives = ["An iterative request expects a final response\n     from the server to which it is directed."]   
+
+    [[dns.questions]]
+    question = "A DNS cache is used for: "
+    answers = ["reducing of request service time", "reducing the workload of authoritative servers"]
+    alternatives = ["DNS service security improvements", "reducing the number of DNS servers"]     
+ 
+    [[dns.questions]]
+    question = "What are the DNS Records types"
+    answers = ["A", "NS", "AAAA", "SOA"]
+    alternatives = ["MAIL", "COMP"] 
+
+    [[dns.questions]]
+    question = "What is the DNS Record used as a 'reverse record'"
+    answers = ["PTR"]
+    alternatives = ["A", "NS", "SOA", "CNAME"] 
+    hint = "For mapping IP addresses to domain names."
+
+    [[dns.questions]]
+    question = "What is the nameserver that contains information specific\nto the domain name it serves"
+    answers = ["Authoritative nameserver"]
+    alternatives = ["MAIL", "COMP"] 
+    hint = "When a recursive resolver receives a response from\n     a TLD nameserver, that response will direct the resolver to\n     that nameserver."
+    explanation = """
+    The authoritative nameserver is usually the resolver’s last 
+    step in the journey for an IP address. The authoritative 
+    nameserver contains information specific to the domain name 
+    it serves (e.g. google.com) and it can provide a recursive 
+    resolver with the IP address of that server found in the DNS 
+    A record, or if the domain has a CNAME record (alias) it will 
+    provide the recursive resolver with an alias domain, at which 
+    point the recursive resolver will have to perform a whole new 
+    DNS lookup to procure a record from an authoritative nameserver 
+    (often an A record containing an IP address). Cloudflare DNS 
+    distributes authoritative nameservers, which come with Anycast 
+    routing to make them more reliable. 
+    """
+
+    [[dns.questions]]
+    question = "What is the DNS Record that maps a domain name\nto a list of mail exchange servers"
+    answers = ["MX"]
+    alternatives = ["A", "NS", "PTR", "CNAME"] 
+    
+    [[dns.questions]]
+    question = "What utility can be used to identify problems\nassociated with DNS name resolution"
+    answers = ["Nslookup"]
+    alternatives = ["Ping", "Netstat", "Tracert"] 
+
+    [[dns.questions]]
+    question = "Choose the correct statements about DNS security extensions"
+    answers = [
+        "It strengthens authentication in DNS using digital signatures",
+        "Every DNS zone has a public/private key pair",
+        "The zone owner uses the zone's private key to sign DNS data",       
+    ]
+    alternatives = ["DNS queries and responses themselves are cryptographically signed"] 
+
+    [[dns.questions]]
+    question = "Choose the correct sequence of queries to DNS servers\nto resolve a domain name"
+    answers = ["Client - Recursive resolver - Root- TLD - Authoritative"]
+    alternatives = [
+        "Client - Root- TLD - Recursive resolver - Authoritative", 
+        "Client - TLD - Root- Recursive resolver - Authoritative", 
+        "Client - Recursive resolver - Authoritative - Root- TLD",
+    ]  
 
 [test]
 label = "9.1.2 Test"

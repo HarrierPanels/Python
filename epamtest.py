@@ -1,6 +1,7 @@
 # Credits
 """
 @Description: EPAM DevOps Essentials Quizz & Knowledge Check tests
+@Version: v1.0
 @Author: HarrierPanels
 @Website: https://aviasimulator.blogspot.com
 @GitHub: https://github.com/HarrierPanels

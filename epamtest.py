@@ -46,6 +46,9 @@ def prepare_questions(path, num_questions):
         alternatives=sorted(topics),
     )[0]
 
+    if topic_label == "exit":
+        sys.exit()
+    
     questions = topics[topic_label]
     num_questions = min(num_questions, len(questions))
     return random.sample(questions, k=num_questions)

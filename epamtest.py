@@ -2,10 +2,10 @@
 __credits__ = ["Real Python", "HarrierPanels"]
 __version__ = "1.0"
 
-        """
-        @Description: EPAM DevOps Essentials Quizz & Knowledge Checks tests
-        @Links: https://aviasimulator.blogspot.com https://realpython.com/
-        """
+"""
+@Description: EPAM DevOps Essentials Quizz & Knowledge Checks tests
+@Links: https://aviasimulator.blogspot.com https://realpython.com/
+"""
     
 # Global
 import pathlib, random, emoji, sys

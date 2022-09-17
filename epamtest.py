@@ -38,17 +38,6 @@ def prepare_questions(path, num_questions):
     num_questions = min(num_questions, len(questions))
     return random.sample(questions, k=num_questions)
 
-##############
-    for i in num_questions:
-        if num_questions == len(questions):
-            while i == input("would u like to start over"):
-                            if i == "y":
-                               run_test()
-                            else:
-                                sys.exit()
-            
-
-
 # Ask questions
 def ask_question(question):
     correct_answers = question["answers"]

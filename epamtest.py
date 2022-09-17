@@ -9,6 +9,7 @@ except ModuleNotFoundError:
 
 NUM_QUESTIONS_PER_TEST = 30
 QUESTIONS_PATH = pathlib.Path(__file__).parent / "questions.toml"
+print(f"\nWelcome to EPAM DevOps Essentials Quizz & Knowledge Checks tests!\n")
 
 # Driver
 def run_test():

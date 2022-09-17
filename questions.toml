@@ -1,5 +1,5 @@
 [basicnetworking]
-label = "Basic networking"
+label = "1. Basic networking"
 
     [[basicnetworking.questions]]
     question = "A connecting of computers and local networks located at a remote distance to share worldwide information resources is called"
@@ -200,7 +200,7 @@ label = "Basic networking"
     alternatives = ["10.0.0.1", "10.0.0.0", "255.255.255.0", "255.255.255.240"] 
 
 [networkprotocols]
-label = "Network Protocols"
+label = "2. Network Protocols"
 
     [[networkprotocols.questions]]
     question = "A broadcast address at the data-link layer is: "
@@ -300,7 +300,7 @@ label = "Network Protocols"
     ]
 
 [subnetting]
-label = "Concept of Subnetting"
+label = "3. Concept of Subnetting"
 
     [[subnetting.questions]]
     question = "What is the largest in capacity classful network"
@@ -377,7 +377,7 @@ label = "Concept of Subnetting"
     alternatives = ["10.10.256.11/12", "10.255.255.255/16"]
 
 [vlan]
-label = "Virtual LAN"
+label = "4. Virtual LAN"
 
     [[vlan.questions]]
     question = "VLANs are used for: "
@@ -431,7 +431,7 @@ label = "Virtual LAN"
     """
 
 [dhcp]
-label = "DHCP"
+label = "5. DHCP"
 
     [[dhcp.questions]]
     question = "What is DHCP"
@@ -523,7 +523,7 @@ label = "DHCP"
     alternatives = ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"] 
 
 [test]
-label = "Test"
+label = "15. Test"
 
     [[test.questions]]
     question = "Test"
@@ -531,7 +531,7 @@ label = "Test"
     alternatives = ["test2"] 
 
 [python]
-label = "Python"
+label = "14. Python"
 
     [[python.questions]]
     question     = "When was the first known use of the word 'quiz'"

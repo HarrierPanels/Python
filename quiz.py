@@ -22,7 +22,19 @@ def run_test():
         num_correct += ask_question(question)
 
     print(f"\nYou got {num_correct} correct out of {num} questions")
-
+    
+    # Exit
+    while True:
+        answer = input('\nDo you want to start over or choose another topic [y/n]: ')
+        if answer.lower().startswith("y"):
+            print("Ok carry on then.\n")
+            run_test()
+        elif answer.lower().startswith("n"):
+            print("Ok bye!")
+            sys.exit()
+        else:
+            print("Please answer yes(y) or no(n).")
+            
 # Preprocessing   
 def prepare_questions(path, num_questions):
     topic_info = tomllib.loads(path.read_text())

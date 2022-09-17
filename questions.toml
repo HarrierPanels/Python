@@ -702,7 +702,7 @@ label = "7. CentOS Linux"
     answers = ["grant +x permissions using chmod command"]
     alternatives = [
         "add .sh extention to file name", 
-        "add \#!/bin/bash at the beginning of the file", 
+        "add #!/bin/bash at the beginning of the file", 
     ] 
 
     [[linux.questions]]

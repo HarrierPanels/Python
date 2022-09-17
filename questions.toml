@@ -622,6 +622,126 @@ label = "6. DNS"
         "Client - Recursive resolver - Authoritative - Root- TLD",
     ]  
 
+[linux]
+label = "7. CentOS Linux"
+
+    [[linux.questions]]
+    question = "Please check Linux distributions in the following OS list: "
+    answers = ["CentOS", "Ubuntu", "RHEL"]
+    alternatives = ["Microsoft Windows", "MacOS"] 
+
+    [[linux.questions]]
+    question = "What is CentOS default package manager"
+    answers = ["yum"]
+    alternatives = ["apts", "apk", "brew"] 
+
+    [[linux.questions]]
+    question = "Which of the following could be configured during CentOS installation"
+    answers = ["All choices"]
+    alternatives = ["network", "users", "disk partitioning", "time", "language"] 
+
+    [[linux.questions]]
+    question = "Could CentOs be installed on both bare metal and hypervisor"
+    answers = ["True"]
+    alternatives = ["False"] 
+
+    [[linux.questions]]
+    question = "The follwing shells are present in CentOS installation by default: "
+    answers = ["bash", "sh"]
+    alternatives = ["ksh", "zsh", "csh"] 
+
+    [[linux.questions]]
+    question = "man command is used to: "
+    answers = ["display command usage examples", "displaying information about a command"]
+    alternatives = ["user creation", "listing contents of current directory", "groups creation"] 
+
+    [[linux.questions]]
+    question = "ls -la ~ command does the following: "
+    answers = ["lists contents of user's home directory including\n     hidden files and file attributes"]
+    alternatives = [
+        "lists contents of current directory", 
+        "lists contents of user's home directory", 
+        "lists contents of current direcory including hidden files",
+    ] 
+
+    [[linux.questions]]
+    question = "cd .. command does the following: "
+    answers = ["changes context to the parent directory of the current directory"]
+    alternatives = [
+        "creates .. directory", 
+        "renames current directory", 
+        "changes context to user's home directory",
+    ] 
+
+    [[linux.questions]]
+    question = "Linux file system is represented as: "
+    answers = ["directory structure"]
+    alternatives = ["logical disks structure"] 
+
+    [[linux.questions]]
+    question = "New storage devices can be mounted: "
+    answers = ["to any directory on the system"]
+    alternatives = ["as a separate logical disk in which directories can\n     be created"] 
+
+    [[linux.questions]]
+    question = "File named 'link' was created using 'ln -s file link' command.\nFile 'file' was deleted afterwards. Attempting to open\n'link' file will: "
+    answers = ["throw an error because soft links depend on original file"]
+    alternatives = ["open the file because hard links do not depend on original file"] 
+
+    [[linux.questions]]
+    question = "Command 'cp ../dir/ ./' will: "
+    answers = ["throw an error"]
+    alternatives = [
+        "copy folder dir to current directory", 
+        "copy folder dir to user's home directory", 
+        "move folder dir and all its files to current directory",
+    ] 
+
+    [[linux.questions]]
+    question = "File 'script' was created. To make this file executable we need to: "
+    answers = ["grant +x permissions using chmod command"]
+    alternatives = [
+        "add .sh extention to file name", 
+        "add \#!/bin/bash at the beginning of the file", 
+    ] 
+
+    [[linux.questions]]
+    question = "Following entities are part of Linux permission model: "
+    answers = ["users", "groups"]
+    alternatives = ["organizational units", "subgroups"] 
+
+    [[linux.questions]]
+    question = "754 permissions on a file mean: "
+    answers = ["owner can read, write, execute; owner group can read,\n     execute; everyone else can read"]
+    alternatives = [
+        "owner can read, execute; owner group can read;\n     everyone else can execute", 
+        "owner can read, write, execute; owner group can\n     read, write; everyone else can write", 
+    ] 
+
+    [[linux.questions]]
+    question = "Which tools can be used for memory diagnostics: "
+    answers = ["top", "free"]
+    alternatives = ["iostat", "netstat"] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 [test]
 label = "9.1.2 Test"
 

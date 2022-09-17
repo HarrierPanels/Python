@@ -25,7 +25,7 @@ def run_test():
     
     # Exit
     while True:
-        answer = input('\n-', 'Do you want to start over or choose another topic [y/n]: ')
+        answer = input('\n-Do you want to start over or choose another topic [y/n]: ')
         if answer.lower().startover("y"):
             print("Ok carry on then")
             run_test()

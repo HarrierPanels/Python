@@ -2,7 +2,8 @@
 __credits__ = ["Real Python", "HarrierPanels"]
 __version__ = "1.0"
 
-        """EPAM DevOps Essentials Quizz & Knowledge Checks tests
+        """
+        @Description: EPAM DevOps Essentials Quizz & Knowledge Checks tests
         @Links: https://aviasimulator.blogspot.com https://realpython.com/
         """
     

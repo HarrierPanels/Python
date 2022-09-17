@@ -723,24 +723,29 @@ label = "7. CentOS Linux"
     answers = ["top", "free"]
     alternatives = ["iostat", "netstat"] 
 
+    [[linux.questions]]
+    question = "File in Linux can have this many owner groups: "
+    answers = ["one"]
+    alternatives = ["two - primary and secondary"] 
+
+    [[linux.questions]]
+    question = "Which of the following directives in systemd unit file\nare required for unit to be valid: "
+    answers = ["ExecStart"]
+    alternatives = ["Alias", "ExecStop", "Restart"] 
 
 
+    [[linux.questions]]
+    question = "/etc/resolv.conf file is responsible for: "
+    answers = ["specifying the IP addresses of DNS servers and the search\n     domain"]
+    alternatives = [
+        "resolving hostnames that cannot be resolved any other way", 
+        "specifyinh routing and host information for all network\n     interfaces", 
+    ] 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    [[linux.questions]]
+    question = "The following ssh config file is present on the system:\nHost test\nHostName 192.168.0.1\nIdentityFile ~/.ssh/test.pem\nWhich commands will allow us to ssh to 'test' host\nunder root user: "
+    answers = ["ssh -i ~/.ssh/test.pem root@192.168.0.1", "ssh root@test"]
+    alternatives = ["ssh test", "ssh -i ~/.ssh/test.pem test", "ssh root@192.168.0.1"] 
 
 [test]
 label = "9.1.2 Test"

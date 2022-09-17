@@ -1,3 +1,6 @@
+[exit]
+label = "Exit"
+
 [basicnetworking]
 label = "Basic networking"
 

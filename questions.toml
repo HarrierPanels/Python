@@ -1,6 +1,11 @@
 [exit]
 label = "Exit"
 
+    [[exit.questions]]
+    question = "Exit"
+    answers = ["Yes"]
+    alternatives = ["No"]
+
 [basicnetworking]
 label = "Basic networking"
 

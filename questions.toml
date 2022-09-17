@@ -316,19 +316,6 @@ label = "Concept of Subnetting"
         "Internet Services Provider",
     ] 
 
-[gogi]
-label = "Gogi"
-[gogi.mogi]
-label = "Gogi Mogi"
-    [[gogi.mogi.questions]]
-    question = "The network class is determined by: "
-    answers = ["The first bits of the first byte of the IP address"]
-    alternatives = [
-        "Network mask/prefix", 
-        "The first bits of the last byte of the IP address", 
-        "Internet Services Provider",
-    ] 
-
 [python]
 label = "Python"
 

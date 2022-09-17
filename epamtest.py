@@ -1,5 +1,5 @@
 # Global
-import pathlib, random, emoji
+import pathlib, random, emoji, sys
 from string import ascii_lowercase
 
 try:
@@ -37,6 +37,17 @@ def prepare_questions(path, num_questions):
     questions = topics[topic_label]
     num_questions = min(num_questions, len(questions))
     return random.sample(questions, k=num_questions)
+
+##############
+    for i in num_questions:
+        if num_questions == len(questions):
+            while i = input("would u like to start over":
+                            if i = "y":
+                               run_test()
+                            else:
+                                sys.exit()
+            
+
 
 # Ask questions
 def ask_question(question):

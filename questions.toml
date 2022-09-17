@@ -376,7 +376,60 @@ label = "Concept of Subnetting"
     answers = ["192.168.0.1/24", "172.168.20.111/8", "1.1.1.1/30", "100.100.1.0/15"]
     alternatives = ["10.10.256.11/12", "10.255.255.255/16"]
 
+[vlan]
+label = "Virtual LAN"
 
+    [[vlan.questions]]
+    question = "VLANs are used for: "
+    answers = ["All choices"]
+    alternatives = [
+        "Networks segmentation based on factors such as\n     function, project team, or application", 
+        "Networks segmentation without regard for the\n     physical location of the user or device", 
+        "Network security improvement",
+    ] 
+
+    [[vlan.questions]]
+    question = "The total number of VLANs is: "
+    answers = ["4096"]
+    alternatives = ["256", "1024", "65535"] 
+
+    [[vlan.questions]]
+    question = "Select the correct location of the VLAN tag\nin the Ethernet frame: "
+    answers = ["Between source address and type"]
+    alternatives = ["Before Ethernet header", "After checksum", "Between data and checksum"] 
+
+    [[vlan.questions]]
+    question = "The VLAN tag length is: "
+    answers = ["4 bytes"]
+    alternatives = ["4 bits", "8 bit", "32 bytes"] 
+
+    [[vlan.questions]]
+    question = "Choose the correct statement: "
+    answers = ["Port in access mode works with untagged traffic"]
+    alternatives = [
+        "Switch port can work in access, trunk or dual mode", 
+        "To work with VLAN end devices must be able to read\n     the VLAN tag", 
+        "Tags allow packets to be routed between VLANs\n     without using router",
+    ] 
+
+    [[vlan.questions]]
+    question = "Choose the correct statement: "
+    answers = [
+        "VLANS are mutually isolated, and packets can only\n     pass between them through a router",
+        "Each VLAN is a broadcast domain, usually with its own\n     IP network",
+        ]
+    alternatives = [
+        "The device belongs to the VLAN solution only\n     by the port to which it is connected", 
+        "To work with VLAN end devices must be able to read\n     the VLAN tag", 
+        "All choices",
+    ] 
+    explanation = """
+    Each VLAN is an individual broadcast domain because a broadcast 
+    in a given VLAN will never reach any ports in other VLANs. 
+    Normally, a port carries traffic only for the single VLAN 
+    to which it belongs. For a VLAN to span multiple switches on 
+    a single connection, a trunk is required to connect two switches. 
+    """
 
 [test]
 label = "Test"

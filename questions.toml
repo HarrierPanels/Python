@@ -366,7 +366,7 @@ label = "Concept of Subnetting"
     ] 
 
     [[subnetting.questions]]
-    question = "he last byte of the network IP address is 160,\nthe last byte of the subnet mask is 224.\nCalculate the last byte of the broadcast address for this subnet"
+    question = "The last byte of the network IP address is 160,\nthe last byte of the subnet mask is 224.\nCalculate the last byte of the broadcast address for this subnet"
     answers = ["191"]
     alternatives = ["192", "161", "159"] 
     hint = "for .224 mask prefix is /27"
@@ -375,6 +375,16 @@ label = "Concept of Subnetting"
     question = "Which IPv4 addresses can be assigned to devices"
     answers = ["192.168.0.1/24", "172.168.20.111/8", "1.1.1.1/30", "100.100.1.0/15"]
     alternatives = ["10.10.256.11/12", "10.255.255.255/16"]
+
+
+
+[test]
+label = "Test"
+
+    [[test.questions]]
+    question = "Test"
+    answers = ["Test"]
+    alternatives = ["test2"] 
 
 [python]
 label = "Python"

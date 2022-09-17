@@ -41,7 +41,7 @@ def prepare_questions(path, num_questions):
 ##############
     for i in num_questions:
         if num_questions == len(questions):
-            while i = input("would u like to start over":
+            while i == input("would u like to start over":
                             if i = "y":
                                run_test()
                             else:

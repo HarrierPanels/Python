@@ -430,6 +430,98 @@ label = "Virtual LAN"
     a single connection, a trunk is required to connect two switches. 
     """
 
+[dhcp]
+label = "DHCP"
+
+    [[dhcp.questions]]
+    question = "What is DHCP"
+    answers = ["A network protocol that allows computers to automatically\n     obtain an IP address and other network settings\n     needed to operate on a TCP/IP network."]
+    alternatives = [
+        "The service of matching NetBIOS names of computers with\n     IP addresses of hosts.", 
+        "Service for updating operating systems and Microsoft products.", 
+        "A domain name system that associates domain names with\n     the IP addresses of computers corresponding to those domains.",
+    ] 
+
+    [[dhcp.questions]]
+    question = "The VLAN tag length is: "
+    answers = ["4 bytes"]
+    alternatives = ["4 bits", "8 bit", "32 bytes"] 
+
+    [[dhcp.questions]]
+    question = "What address allocation methods does the DHCP service use"
+    answers = ["All choices"]
+    alternatives = ["Manual Allocation", "Automatic Allocation", "Dynamic Allocation"] 
+
+    [[dhcp.questions]]
+    question = "What type of request is used to obtain an address via DHCP"
+    answers = ["broadcast"]
+    alternatives = ["multicast", "unicast", "anycast"] 
+
+    [[dhcp.questions]]
+    question = "DHCP Service Message Types: "
+    answers = ["DHCPDISCOVER", "DHCPOFFER", "DHCPACK", "DHCPREQUEST"]
+    alternatives = ["DHCPORDER", "DHCPSERVER"] 
+    
+    [[dhcp.questions]]
+    question = "Choose the correct order of requests and responses\nwhen obtaining an IP address via DHCP: "
+    answers = ["DHCPDISCOVER - DHCPOFFER - DHCPREQUEST - DHCPACK"]
+    alternatives = [
+        "DHCPDISCOVER - DHCPOFFER - DHCPACK - DHCPREQUEST", 
+        "DHCPSERVER - DHCPDISCOVER - DHCPOFFER - DHCPACK", 
+        "DHCPDISCOVER - DHCPOFFER - DHCPORDER - DHCPACK",
+    ]     
+    
+    [[dhcp.questions]]
+    question = "What network settings can be obtained via DHCP"
+    answers = ["IP address", "Subnet mask", "DNS server address", "Default gateway"]
+    alternatives = ["Administrator Password", "MAC address"]     
+    
+    [[dhcp.questions]]
+    question = "What is the source IP address in the DHCPDISCOVER packet"
+    answers = ["0.0.0.0"]
+    alternatives = ["192.168.0.0", "255.255.255.255", "192.168.0.1"]     
+    
+    [[dhcp.questions]]
+    question = "What is the destination IP address in the DHCPDISCOVER packet"
+    answers = ["255.255.255.255"]
+    alternatives = ["192.168.0.255", "0.0.0.0", "192.168.0.1"]    
+    
+    [[dhcp.questions]]
+    question = "What are benefits of Using DHCP"
+    answers = [
+        "DHCP minimizes configuration errors caused by manually\n     configuring an IP address, such as typos or address\n     conflicts.",
+        "Centralized and automatic TCP/IP configuration for all\n     clients on the network.",
+        ]
+    alternatives = [
+        "Improved network security.", 
+        "Service for updating operating systems and Microsoft products.", 
+        "Reduction of service traffic.",
+    ] 
+    
+    [[dhcp.questions]]
+    question = "What protocol and ports does the DHCP service use"
+    answers = ["UDP 67/68"]
+    alternatives = ["TCP 67/68", "ICMP 1/2", "TCP 80/443", "TCP 53"]     
+    
+    [[dhcp.questions]]
+    question = "What identifier does the DHCP server use to reserve\nan IP address for the client"
+    answers = ["MAC address of the network adapter of client\n     computer"]
+    alternatives = [
+        "Network interface name of the client computer", 
+        "Computer name of the client computer", 
+        "All choices",
+    ]    
+
+    [[dhcp.questions]]
+    question = "What is the methods in which IPv6 global unicast\naddresses can be assigned without special server"
+    answers = ["SLAAC and DHCPv6", "Stateless Address Autoconfiguration"]
+    alternatives = ["DNS", "Stateful DHCPv6"] 
+
+    [[dhcp.questions]]
+    question = "When a computer sends DHCP requests and does not\nreceive a response, from which subnet does the computer\nautomatically generate an IP address"
+    answers = ["169.254.0.0/16"]
+    alternatives = ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"] 
+
 [test]
 label = "Test"
 

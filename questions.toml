@@ -747,6 +747,61 @@ label = "7. CentOS Linux"
     answers = ["ssh -i ~/.ssh/test.pem root@192.168.0.1", "ssh root@test"]
     alternatives = ["ssh test", "ssh -i ~/.ssh/test.pem test", "ssh root@192.168.0.1"] 
 
+[bash]
+label = "8. Bash"
+
+    [[bash.questions]]
+    question = "What shebang is wrong"
+    answers = ["All choices are valid"]
+    alternatives = [
+        "#!/bin/bash", 
+        "#!/usr/bin/env bash", 
+        "#!/bin/sh", 
+        "#!/usr/bin/env python3",
+        "All choices are invalid",
+    ] 
+
+    [[bash.questions]]
+    question = "For all commands the exit status is stored in the special variable: "
+    answers = ["$?"]
+    alternatives = ["$0", "$@", "$$", "$#"] 
+
+    [[bash.questions]]
+    question = "How to Exit immediately if a command exits with a non-zero\nstatus and Print commands and their arguments as they\nare executed"
+    answers = ["set -ex"]
+    alternatives = ["set +ex", "set +e -x", "set -e +x", "set -ep"] 
+
+    [[bash.questions]]
+    question = "How many lines with Hello in output:\ngreet() { for i in `seq $1`; do echo Hello $i; done } && greet '2 5'"
+    answers = ["4"]
+    alternatives = ["2", "3", "5", "An error is displayed"] 
+    hint = "seq prints a sequence of numbers"
+    explanation = """
+    seq command is used to print a sequence of numbers from FIRST to LAST 
+    in steps of INCREMENT. By default, each number is printed on a separate 
+    line.
+    """
+
+    [[bash.questions]]
+    question = "What does > do in the BASH shell"
+    answers = ["Redirects output to a new or existing file and writes\n     to the beginning of the file"]
+    alternatives = [
+        "Redirects output to a new or existing file and appends to the\n     end of the file", 
+        "Redirects output to an new file only", 
+        "Redirects output to an existing file only", 
+    ] 
+
+    [[bash.questions]]
+    question = "Which of the following commands would try to stop a process"
+    answers = ["kill PID"]
+    alternatives = ["stop PID", "exit PID", "ps PID"] 
+
+
+    [[bash.questions]]
+    question = "Which of the following commands would set the default rw\npermission to all users on every file which is created in\nthe current shell"
+    answers = ["umask 0000"]
+    alternatives = ["umask 888", "umask 777", "umask 555"] 
+
 [test]
 label = "9.1.2 Test"
 

@@ -420,7 +420,7 @@ label = "Virtual LAN"
     ]
     alternatives = [
         "The device belongs to the VLAN solution only\n     by the port to which it is connected", 
-        "All choices",
+        "VLAN is the same as VPN",
     ] 
     explanation = """
     Each VLAN is an individual broadcast domain because a broadcast 
@@ -836,8 +836,8 @@ label = "Version Control with GIT"
 
     [[git.questions]]
     question = "What combination of commands in git bash will be the right one\nto add a new file to index, commit and submit to github"
-    answers = ["Private (file id_rsa)"]
-    alternatives = ["Public (file id_rsa.pub)"] 
+    answers = ["git add, git commit, git push"]
+    alternatives = ["git index, git commit, git push", "git commit, git pull", "git commit, git push"] 
     hint = "Start by adding changes to index using the git add command."    
     explanation = """
     First you add files through add, then commit and synchronize the 
@@ -904,7 +904,7 @@ label = "Version Control with GIT"
 
     [[git.questions]]
     question = "How much does branch occupy in the file system"
-    answers = ["*41 bytes"]
+    answers = ["41 bytes"]
     alternatives = [
         "Proportional to the size of the project. If the project is 10 MB\n     in one branch, then when you create the second, it will become 20 MB.", 
         "1024 Kb", 
@@ -939,33 +939,56 @@ label = "Version Control with GIT"
     """
 
     [[git.questions]]
-    question = "What happened to the master and feature branches according to the diagram:\n"
-    answers = [":wq"]
-    alternatives = [":q!", "Ctrl+S", "Ctrl+C", "doc", "!*$%"] 
+    question = "You create a new branch 'feauture'. Then you make 3 new commits\nin the new branch. Than you return to the master branch and make a new\ncommit there. What kind of merge will happen if you git merge feature\nin the master branch"
+    answers = ["Non fast-forward merge"]
+    alternatives = ["Fast-forward merge", "Cherry-pick", "The merge is impossible"] 
 
+    [[git.questions]]
+    question = "In the master branch you have 3 commits A, B, & C. You create a new\nbranch 'feauture'. Then you make 3 new commits in the new branch D, E, & F.\nWhat will be the HEAD pointer of the master branch after\nyou do the merge feature in master"
+    answers = ["F"]
+    alternatives = ["A", "B", "C", "D", "E", "New commit G"]
 
+    [[git.questions]]
+    question = "You are in the feature branch. The project manager asks you to urgently\nfix the defect in the master branch. You have unsaved changes\nthat you are not ready to commit. What will be the procedure"
+    answers = ["git stash, git checkout master, fixing the defect, returning to\n     the feature branch"]
+    alternatives = [
+        "git clean -xdf, git checkout master, fixing the defect, returning to\n     the feature branch", 
+        "git add., git checkout master, fixing the defect, returning to\n     the feature branch", 
+        "git checkout., git checkout master, fixing the defect, returning to\n     the feature branch", 
+    ] 
+    hint = "clean -xdf will remove all new files that were made in feature"  
+    explanation = """
+    Use git stash when you want to record the current state of the working 
+    directory and the index, but want to go back to a clean working directory. 
+    The command saves your local modifications away and reverts the working 
+    directory to match the HEAD commit.  
+    """
 
-[test]
-label = "Test"
+    [[git.questions]]
+    question = "You want to mark the current commit with the tag 'release1.0'.\nWhat is the right command for it in the console"
+    answers = ["git tag release1.0"]
+    alternatives = ["git --tag release1.0", "git add tag release1.0", "git addtag release1.0"]
 
-    [[test.questions]]
-    question = "     A---B---C topic"
-		    "/	      *"
-	       "D---E---F---G---H master"
-    answers = ["Test"]
-    alternatives = ["test2"] 
+    [[git.questions]]
+    question = "What is the difference between git stash pop and git stash apply?\nBoth will transfer the changes saved in stash back to the working\ndirectory, but what is the difference"
+    answers = ["pop will delete stash after returning the changes saved in it, apply -\n     will leave it"]
+    alternatives = [
+        "No difference, this is alias. the commands are identical", 
+        "apply will remove stash after returning the changes saved in it,\n     pop will leave it", 
+        "apply will apply stash to the project, pop - will list available\n     stashes for application", 	
+    ] 
+
+    [[git.questions]]
+    question = "Which command can help you configure the git so that fetch and push go\nto another remote repository"
+    answers = ["git remote"]
+    alternatives = ["git repository", "git config", "That is imposible"]
 
 [python]
 label = "Python"
 
     [[python.questions]]
-    question     = "When was the first known use of the word 'quiz'"
-    answers      = ["1781"]
-    alternatives = ["1771", "1871", "1881"]
-
-    [[python.questions]]
-    question     = "Which built-in function can get information from the user"
-    answers      = ["input"]
+    question = "Which built-in function can get information from the user"
+    answers = ["input"]
     alternatives = ["get", "print", "write"]
 
     [[python.questions]]
@@ -1015,9 +1038,9 @@ label = "Python"
     alternatives = ["3.9", "3.10", "3.12"]
 
     [[python.questions]]
-    question     = "How can you run a Python script named quiz.py"
-    answers      = ["python quiz.py", "python -m quiz"]
-    alternatives = ["python quiz", "python -m quiz.py"]
+    question     = "How can you run a Python script named epamtest.py"
+    answers      = ["python epamtest.py", "python -m epamtest"]
+    alternatives = ["python epamtest", "python -m epamtest.py"]
     hint         = "One option uses the filename, and the other uses the module name."
 
     [[python.questions]]
@@ -1073,3 +1096,148 @@ label = "Python"
     Python 2.0 and Python 3.0, were released in October 2000 and December
     2008, respectively.
     """
+
+    [[python.questions]]
+    question = "Which data types used in python"
+    answers = ["All choices"]
+    alternatives = [
+        "Text Types (str)",
+        "Boolean Type (bool)",
+        "Sequence types (list, tuple, range)",
+    ]
+    explanation = """
+    Python contains Text types, Boolean, and also provides some built-in data 
+    types, in particular, dict , list , set and frozenset, and tuple. The str 
+    class is used to hold Unicode strings, and the bytes and bytearray classes 
+    are used to hold binary data.
+    """
+
+    [[python.questions]]
+    question = "In order to create a variable should I set its type"
+    answers = ["No, but I can specify or change it dynamically with casting"]
+    alternatives = [
+        "Yes when you create a variable you should provide its type",
+    ]
+    explanation = """
+    Python is a language with dynamic typing, and all variables can be casted 
+    to any selected type. 
+    """
+
+    [[python.questions]]
+    question     = "Which type is ordered, changeable, and allow duplicate values"
+    answers      = ["List"]
+    alternatives = ["Tuple", "Dictionary", "Set", "All choices"]
+    explanation = """
+    Lists are one of 4 built-in data types in Python used to store collections 
+    of data, the other 3 are Tuple, Set, and Dictionary, all with different 
+    qualities and usage. List items are ordered, changeable, and allow 
+    duplicate values. List items are indexed, the first item has index [0], 
+    the second item has index [1] etc.
+    """
+
+    [[python.questions]]
+    question     = "Which type could be unpacked"
+    answers      = ["All choices"]
+    alternatives = ["Tuple", "Dictionary", "Set", "List"]
+    explanation = """
+    Python allows a tuple (or list) of variables to appear on the left 
+    side of an assignment operation. Each variable in the tuple can 
+    receive one value (or more, if we use the * operator) from an iterable 
+    on the right side of the assignment.  
+    
+    In the context of unpacking in Python, the ** operator is called the 
+    dictionary unpacking operator. The use of this operator was extended by 
+    PEP 448. Now, we can use it in function calls, in comprehensions and 
+    generator expressions, and in displays.
+    
+    Finally, we can also use set objects in unpacking operations. However, 
+    since sets are unordered collection, the order of the assignments can 
+    be sort of incoherent and can lead to subtle bugs. 
+    """
+
+    [[python.questions]]
+    question = "Which command used for showing something on screen"
+    answers = ["print()"]
+    alternatives = [
+        "str()",
+        "cout()",
+        "show()",
+    ]
+
+    [[python.questions]]
+    question = "Which statements below are true"
+    answers = [
+        "Using for loop I can get access to each item of the list",
+        "Modules can be used to store functions",
+        "Python has automatic memory management",        
+    ]
+    alternatives = [
+        "Python nested IF statements are not allowed",
+        "Python can't be used in multi-thread computing",
+        "Python won't work on linux and macOS",
+    ]
+
+    [[python.questions]]
+    question     = "Which statement is used for logical expressions and operators"
+    answers      = ["If"]
+    alternatives = ["For", "While", "Bytes", "Int"]
+    explanation = """
+    In Python Logical operators are used on conditional statements (either 
+    True or False). They perform Logical AND, Logical OR and Logical NOT 
+    operations. 
+    """
+
+    [[python.questions]]
+    question     = "How do you create copy of the Python list"
+    answers      = ["list2 = list1.copy()"]
+    alternatives = ["list2 = list1", "list2 = copy(list1)", "copy (list1, list2)", "not possible"]
+
+    [[python.questions]]
+    question     = "How do you cast float into integer value but with understanding that\nPython has dynamic typing"
+    answers      = ["int(value)"]
+    alternatives = ["str(int(value))", "print(int(value)", "it’s already a number", "int = float"]
+
+    [[python.questions]]
+    question     = "What are the Python disadvantages"
+    answers      = ["Speed", "Scripts are required more testing", "Memory consumption"]
+    alternatives = ["Hard to understand code", "Incompatibility"]
+
+    [[python.questions]]
+    question     = "What are the Python benefits"
+    answers      = ["Interpretable", "Interactive", "Ported", "Expandable", "Object oriented"]
+    alternatives = ["Difficult"]
+    
+    [[python.questions]]
+    question     = "How to install a Python module"
+    answers      = ["pip install <module>"]
+    alternatives = ["pip <module>", "pip pull <module>", "python -m pip install <module>", "All choices"]
+      
+    [[python.questions]]
+    question     = "What is part of Python"
+    answers      = ["All choices"]
+    alternatives = [
+        "Dynamic typing",
+        "Automatic memory management",
+        "Exception Handling",
+        "Milti-thread computing",        
+    ]   
+    
+    [[python.questions]]
+    question     = "Where can I write Python scripts"
+    answers      = ["Any text editor can be used"]
+    alternatives = ["Only Pycharm can be used"]
+    
+[ff]
+label = "Pyn"
+
+    [[ff.questions]]
+    question     = "Which type is ordered, changeable, and allow duplicate values"
+    answers      = ["List"]
+    alternatives = ["Tuple", "Dictionary", "Set", "All choices"]
+    explanation = """
+    Lists are one of 4 built-in data types in Python used to store collections 
+    of data, the other 3 are Tuple, Set, and Dictionary, all with different 
+    qualities and usage. List items are ordered, changeable, and allow 
+    duplicate values. List items are indexed, the first item has index [0], 
+    the second item has index [1] etc.
+    """    

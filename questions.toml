@@ -836,8 +836,8 @@ label = "Version Control with GIT"
 
     [[git.questions]]
     question = "What combination of commands in git bash will be the right one\nto add a new file to index, commit and submit to github"
-    answers = ["Private (file id_rsa)"]
-    alternatives = ["Public (file id_rsa.pub)"] 
+    answers = ["git add, git commit, git push"]
+    alternatives = ["git index, git commit, git push", "git commit, git pull", "git commit, git push"] 
     hint = "Start by adding changes to index using the git add command."    
     explanation = """
     First you add files through add, then commit and synchronize the 

@@ -36,17 +36,17 @@ def run_test():
     def score():
         score = num_correct*100/num
         if num_correct == num:
-            return score = emoji.emojize("Your score: [:star::star::star::star::star:] Exellent!")
+            return emoji.emojize("Your score: [:star::star::star::star::star:] Exellent!")
         elif score >= 70 and score < 100:
-            return score = emoji.emojize("Your score: [:star::star::star::star:-] Good!")      
+            return emoji.emojize("Your score: [:star::star::star::star:-] Good!")      
         elif score >= 50 and score < 70:
-            return score = emoji.emojize("Your score: [:star::star::star:--] Average!")   
+            return emoji.emojize("Your score: [:star::star::star:--] Average!")   
         elif score >= 30 and score < 50:
-            return score = emoji.emojize("Your score: [:star::star:---] Poor!")       
+            return emoji.emojize("Your score: [:star::star:---] Poor!")       
         elif score > 0 and score < 30:
-            return score = emoji.emojize("Your score: [:star:----] Too bad!")          
+            return emoji.emojize("Your score: [:star:----] Too bad!")          
         else:
-            return score = emoji.emojize("Your score: [-----] Worst ever!")             
+            return emoji.emojize("Your score: [-----] Worst ever!")             
    
     print(f"\nYou got {num_correct} correct out of {num} questions.", score())   
     #score()

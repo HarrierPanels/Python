@@ -879,7 +879,7 @@ label = "Version Control with GIT"
     alternatives = ["git update", "git add", "git reset --hard HEAD^^"] 
 
 [test2]
-label = "Test"
+label = "Test2"
 
     [[test2.questions]]
     question = "Test"

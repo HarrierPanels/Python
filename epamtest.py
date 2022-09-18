@@ -31,7 +31,8 @@ def run_test():
     for num, question in enumerate(questions, start=1):
         print(f"\nQuestion {num}:")
         num_correct += ask_question(question)
-        
+
+    #Score    
     def score():
         score = num_correct*100/num
         if num_correct == num:
@@ -48,7 +49,7 @@ def run_test():
             print (emoji.emojize("Your score: [-----] Worst ever!"))             
    
     print(f"\nYou got {num_correct} correct out of {num} questions.")   
-    score()
+    #score()
     
     # Exit
     while True:

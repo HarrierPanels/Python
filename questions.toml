@@ -904,7 +904,7 @@ label = "Version Control with GIT"
 
     [[git.questions]]
     question = "How much does branch occupy in the file system"
-    answers = ["*41 bytes"]
+    answers = ["41 bytes"]
     alternatives = [
         "Proportional to the size of the project. If the project is 10 MB\n     in one branch, then when you create the second, it will become 20 MB.", 
         "1024 Kb", 

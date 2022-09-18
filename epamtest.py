@@ -49,7 +49,6 @@ def run_test():
             return emoji.emojize("Your score: [-----] Worst ever!")             
    
     print(f"\nYou got {num_correct} correct out of {num} questions.\n",score())   
-    #score()
     
     # Exit
     while True:

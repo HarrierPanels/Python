@@ -29,5 +29,6 @@ def main():
  c = ask_value("c=")
  solv_square(a,b,c)
 
-main()
+if __name__ == "__main__":
+ main()
 

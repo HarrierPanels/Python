@@ -1,54 +1,25 @@
+# Credits
+"""
+@Description: EPAM DevOps Essentials Quizz & Knowledge Check tests
+@Version: v1.0
+@Credits: Real Python, HarrierPanels
+@Website: https://aviasimulator.blogspot.com
+@GitHub: https://github.com/HarrierPanels
+@Links: https://realpython.com
+"""
+    
 # Global
-import random, sys, emoji
+import pathlib, random, emoji, sys
+from string import ascii_lowercase
 
-NUM_QUESTIONS_PER_QUIZ = 30
-QUESTIONS = {
-    "When was the first known use of the word 'quiz'": [
-        "1781", "1771", "1871", "1881",
-    ],
-    "Which built-in function can get information from the user": [
-        "input", "get", "print", "write",
-    ],
-    "Which keyword do you use to loop over a given list of elements": [
-        "for", "while", "each", "loop",
-    ],
-    "What's the purpose of the built-in zip() function": [
-        "To iterate over two or more sequences at the same time",
-        "To combine several strings into one",
-        "To compress several files into one archive",
-        "To get information from the user",
-    ],
-    "What's the name of Python's sorting algorithm": [
-        "Timsort", "Quicksort", "Merge sort", "Bubble sort",
-    ],
-    "What does dict.get(key) return if key isn't found in dict": [
-        "None", "key", "True", "False",
-    ],
-    "How do you iterate over both indices and elements in an iterable": [
-        "enumerate(iterable)",
-        "enumerate(iterable, start=1)",
-        "range(iterable)",
-        "range(iterable, start=1)",
-    ],
-    "What's the official name of the := operator": [
-        "Assignment expression",
-        "Named expression",
-        "Walrus operator",
-        "Colon equals operator",
-    ],
-    "What's one effect of calling random.seed(42)": [
-        "The random numbers are reproducible.",
-        "The random numbers are more random.",
-        "The computer clock is reset.",
-        "The first random number is always 42.",
-    ],
-    "When does __name__ == '__main__' equal True in a Python file": [
-        "When the file is run as a script",
-        "When the file is imported as a module",
-        "When the file has a valid name",
-        "When the file only has one function",
-    ]
-}
+try:
+    import tomllib
+except ModuleNotFoundError:
+    import tomli as tomllib
+
+NUM_QUESTIONS_PER_TEST = 30
+QUESTIONS_PATH = pathlib.Path(__file__).parent / "questions.toml"
+print("\nWelcome to EPAM DevOps Essentials Quizz & Knowledge Check tests!\n")
 
 # Driver
 def run_test():
@@ -61,11 +32,27 @@ def run_test():
         print(f"\nQuestion {num}:")
         num_correct += ask_question(question)
 
-    print(f"\nYou got {num_correct} correct out of {num} questions")
+    #Score    
+    def score():
+        score = num_correct*100/num
+        if num_correct == num:
+            return emoji.emojize("[:star::star::star::star::star:] Exellent!")
+        elif score >= 70 and score < 100:
+            return emoji.emojize("[:star::star::star::star:-] Good!")      
+        elif score >= 50 and score < 70:
+            return emoji.emojize("[:star::star::star:--] Average!")   
+        elif score >= 30 and score < 50:
+            return emoji.emojize("[:star::star:---] Poor!")       
+        elif score > 0 and score < 30:
+            return emoji.emojize("[:star:----] Too bad!")          
+        else:
+            return emoji.emojize("[-----] Worst ever!")             
+   
+    print(f"\nYou got {num_correct} correct out of {num} questions.", score())   
     
     # Exit
     while True:
-        answer = input('\nDo you want to start over or choose another topic [y/n]: ')
+        answer = input("\nDo you want to start over or choose another topic [y/n]: ")
         if answer.lower().startswith("y"):
             print("Ok carry on then.\n")
             run_test()
@@ -83,13 +70,13 @@ def prepare_questions(path, num_questions):
     }
     topic_label = get_answers(
         question="Which topic do you want to take",
-        alternatives=sorted(topics),
+        alternatives=topics,
     )[0]
-
+   
     questions = topics[topic_label]
     num_questions = min(num_questions, len(questions))
-    return random.sample(questions, k=num_questions)
-
+    return random.sample(questions, k=num_questions)           
+   
 # Ask questions
 def ask_question(question):
     correct_answers = question["answers"]
@@ -121,7 +108,7 @@ def get_answers(question, alternatives, num_choices=1, hint=None):
     labeled_alternatives = dict(zip(ascii_lowercase, alternatives))
     if hint:
         labeled_alternatives["?"] = "Hint"
-
+           
     for label, alternative in labeled_alternatives.items():
         print(f"  {label}) {alternative}")
 

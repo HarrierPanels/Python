@@ -31,7 +31,22 @@ def run_test():
     for num, question in enumerate(questions, start=1):
         print(f"\nQuestion {num}:")
         num_correct += ask_question(question)
-
+        
+    def score():
+        score = num_correct*100/num
+        if num_correct == num:
+            print (emoji.emojize("Your score: [:star::star::star::star::star:] Exellent!"))
+        elif score >= 70 and score < 100:
+            print (emoji.emojize("Your score: [:star::star::star::star:-] Good!"))      
+        elif score >= 50 and score < 70:
+            print (emoji.emojize("Your score: [:star::star::star:--] Average!"))   
+        elif score >= 30 and score < 50:
+            print (emoji.emojize("Your score: [:star::star:---] Poor!"))       
+        elif score > 0 and score < 30:
+            print (emoji.emojize("Your score: [:star:----] Too bad!"))          
+        else:
+            print (emoji.emojize("Your score: [-----] Worst ever!"))             
+   
     print(f"\nYou got {num_correct} correct out of {num} questions.", score())   
         
     # Exit
@@ -59,23 +74,7 @@ def prepare_questions(path, num_questions):
    
     questions = topics[topic_label]
     num_questions = min(num_questions, len(questions))
-    return random.sample(questions, k=num_questions)
-
-# Score
-def score():
-    score = num_correct*100/num
-    if num_correct == num:
-        print (emoji.emojize("Your score: [:star::star::star::star::star:] Exellent!"))
-    elif score >= 70 and score < 100:
-        print (emoji.emojize("Your score: [:star::star::star::star:-] Good!"))      
-    elif score >= 50 and score < 70:
-        print (emoji.emojize("Your score: [:star::star::star:--] Average!"))   
-    elif score >= 30 and score < 50:
-        print (emoji.emojize("Your score: [:star::star:---] Poor!"))       
-    elif score > 0 and score < 30:
-        print (emoji.emojize("Your score: [:star:----] Too bad!"))          
-    else:
-        print (emoji.emojize("Your score: [-----] Worst ever!"))             
+    return random.sample(questions, k=num_questions)           
    
 # Ask questions
 def ask_question(question):

@@ -1,6 +1,6 @@
 # Global
 from string import ascii_lowercase
-import random
+import random, sys, emoji
 
 NUM_QUESTIONS_PER_QUIZ = 5
 QUESTIONS = {

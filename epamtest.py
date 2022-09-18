@@ -93,6 +93,9 @@ def get_answers(question, alternatives, num_choices=1, hint=None):
     if hint:
         labeled_alternatives["?"] = "Hint"
 
+     if Exit:
+        sys.exit()       
+        
     for label, alternative in labeled_alternatives.items():
         print(f"  {label}) {alternative}")
 

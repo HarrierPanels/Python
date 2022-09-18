@@ -975,8 +975,8 @@ label = "Version Control with GIT"
     alternatives = [
         "pop will delete stash after returning the changes saved in it, apply -\n     will leave it", 
         "No difference, this is alias. the commands are identical", 
-        "apply will remove stash after returning the changes saved in it, pop will\n     leave it", 
-        "apply will apply stash to the project, pop - will list available stashes\n     for application", 	
+        "apply will remove stash after returning the changes saved in it,\n     pop will leave it", 
+        "apply will apply stash to the project, pop - will list available\n     stashes for application", 	
     ] 
 
     [[git.questions]]

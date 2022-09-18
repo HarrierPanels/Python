@@ -944,7 +944,7 @@ label = "Version Control with GIT"
     alternatives = ["Fast-forward merge", "Cherry-pick", "The merge is impossible"] 
 
     [[git.questions]]
-    question = "In the master branch you have 3 commits A, B, & C. You create a new branch\n'feauture'.\nThen you make 3 new commits in the new branch D, E, & F.\nWhat will be the HEAD pointer of the master branch after you do\nthe merge feature in master"
+    question = "In the master branch you have 3 commits A, B, & C. You create a new branch 'feauture'.\nThen you make 3 new commits in the new branch D, E, & F.\nWhat will be the HEAD pointer of the master branch after you do\nthe merge feature in master"
     answers = ["F"]
     alternatives = ["A", "B", "C", "D", "E", "New commit G"]
 

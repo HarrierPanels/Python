@@ -62,7 +62,7 @@ def prepare_questions(path, num_questions):
     return random.sample(questions, k=num_questions)
 
 # Score
-def score()
+def score():
     score = num_correct*100/num
     if num_correct == num:
         print (emoji.emojize("Your score: [:star::star::star::star::star:] Exellent!"))

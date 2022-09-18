@@ -19,7 +19,7 @@ except ModuleNotFoundError:
 
 NUM_QUESTIONS_PER_TEST = 30
 QUESTIONS_PATH = pathlib.Path(__file__).parent / "questions.toml"
-print(f"\nWelcome to EPAM DevOps Essentials Quizz & Knowledge Check tests!\n")
+print("\nWelcome to EPAM DevOps Essentials Quizz & Knowledge Check tests!\n")
 
 # Driver
 def run_test():
@@ -48,11 +48,11 @@ def run_test():
         else:
             return emoji.emojize("Your score: [-----] Worst ever!")             
    
-    print("\nYou got {num_correct} correct out of {num} questions.\n",score())   
+    print(f"\nYou got {num_correct} correct out of {num} questions.\n",score())   
     
     # Exit
     while True:
-        answer = input('\nDo you want to start over or choose another topic [y/n]: ')
+        answer = input("\nDo you want to start over or choose another topic [y/n]: ")
         if answer.lower().startswith("y"):
             print("Ok carry on then.\n")
             run_test()

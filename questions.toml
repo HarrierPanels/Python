@@ -949,9 +949,9 @@ label = "Version Control with GIT"
 label = "Test"
 
     [[test.questions]]
-    question = "     A---B---C topic
-		    /	      *
-	       D---E---F---G---H master"
+    question = "     A---B---C topic"
+		    "/	      *"
+	       "D---E---F---G---H master"
     answers = ["Test"]
     alternatives = ["test2"] 
 

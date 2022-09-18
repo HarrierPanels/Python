@@ -944,7 +944,6 @@ label = "Version Control with GIT"
     alternatives = [":q!", "Ctrl+S", "Ctrl+C", "doc", "!*$%"] 
 
 
-
 [test]
 label = "Test"
 

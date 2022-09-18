@@ -420,7 +420,7 @@ label = "Virtual LAN"
     ]
     alternatives = [
         "The device belongs to the VLAN solution only\n     by the port to which it is connected", 
-        "All choices",
+        "VLAN is the same as VPN",
     ] 
     explanation = """
     Each VLAN is an individual broadcast domain because a broadcast 
@@ -1211,13 +1211,18 @@ label = "Python"
     question     = "How to install a Python module"
     answers      = ["pip install <module>"]
     alternatives = ["pip <module>", "pip pull <module>", "python -m pip install <module>", "All choices"]
+      
+    [[python.questions]]
+    question     = "What is part of Python"
+    answers      = ["All choices"]
+    alternatives = [
+        "Dynamic typing",
+        "Automatic memory management",
+        "Exception Handling",
+        "Milti-thread computing",        
+    ]   
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    [[python.questions]]
+    question     = "Where can I write Python scripts"
+    answers      = ["Any text editor can be used"]
+    alternatives = ["Only Pycharm can be used"]

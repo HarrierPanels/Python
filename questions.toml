@@ -950,22 +950,39 @@ label = "Version Control with GIT"
 
     [[git.questions]]
     question = "You are in the feature branch. The project manager asks you to urgently\nfix the defect in the master branch. You have unsaved changes\nthat you are not ready to commit. What will be the procedure"
-    answers = ["Fix the content of files with conflicts, make a commit of changes"]
+    answers = ["git stash, git checkout master, fixing the defect, returning to\n     the feature branch"]
     alternatives = [
-        "Fix the contents of files with conflicts, make git merge --abort", 
-        "Use git reset --hard HEAD", 
-        "Make a new copy of the project via git clone. This copy is broken\n     and will never work.", 
+        "git clean -xdf, git checkout master, fixing the defect, returning to\n     the feature branch", 
+        "git add., git checkout master, fixing the defect, returning to\n     the feature branch", 
+        "git checkout., git checkout master, fixing the defect, returning to\n     the feature branch", 
     ] 
-    hint = "First you need to fix the contents of files, where there is a conflict."  
+    hint = "clean -xdf will remove all new files that were made in feature"  
     explanation = """
-    You could also use git merge --continue.  
+    Use git stash when you want to record the current state of the working 
+    directory and the index, but want to go back to a clean working directory. 
+    The command saves your local modifications away and reverts the working 
+    directory to match the HEAD commit.  
     """
 
+    [[git.questions]]
+    question = "You want to mark the current commit with the tag 'release1.0'.\nWhat is the right command for it in the console"
+    answers = ["git tag release1.0"]
+    alternatives = ["git --tag release1.0", "git add tag release1.0", "git addtag release1.0"]
 
+    [[git.questions]]
+    question = "What is the difference between git stash pop and git stash apply?\nBoth will transfer the changes saved in stash back to the working\ndirectory, but what is the difference"
+    answers = ["git stash, git checkout master, fixing the defect, returning to\n     the feature branch"]
+    alternatives = [
+        "pop will delete stash after returning the changes saved in it, apply -\n     will leave it", 
+        "No difference, this is alias. the commands are identical", 
+        "apply will remove stash after returning the changes saved in it, pop will\n     leave it", 
+        "apply will apply stash to the project, pop - will list available stashes\n     for application", 	
+    ] 
 
-
-
-
+    [[git.questions]]
+    question = "Which command can help to configure the git so that fetch and push go\nto another remote repository?"
+    answers = ["git remote"]
+    alternatives = ["git repository", "git config", "That is imposible"]
 
 
 
@@ -974,9 +991,9 @@ label = "Version Control with GIT"
 label = "Test"
 
     [[test.questions]]
-    question = "     A---B---C topic"
-		    "/	      *"
-	       "D---E---F---G---H master"
+    question = "     A---B---C topic
+                   /       *
+          D---E---F---G---H master"
     answers = ["Test"]
     alternatives = ["test2"] 
 

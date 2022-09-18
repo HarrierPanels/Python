@@ -300,7 +300,7 @@ label = "Network Protocols"
     ]
 
 [subnetting]
-label = "3. Concept of Subnetting"
+label = "Concept of Subnetting"
 
     [[subnetting.questions]]
     question = "What is the largest in capacity classful network"
@@ -377,7 +377,7 @@ label = "3. Concept of Subnetting"
     alternatives = ["10.10.256.11/12", "10.255.255.255/16"]
 
 [vlan]
-label = "4. Virtual LAN"
+label = "Virtual LAN"
 
     [[vlan.questions]]
     question = "VLANs are used for: "
@@ -431,7 +431,7 @@ label = "4. Virtual LAN"
     """
 
 [dhcp]
-label = "5. DHCP"
+label = "DHCP"
 
     [[dhcp.questions]]
     question = "What is DHCP"
@@ -523,7 +523,7 @@ label = "5. DHCP"
     alternatives = ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"] 
 
 [dns]
-label = "6. DNS"
+label = "DNS"
 
     [[dns.questions]]
     question = "What is DNS"
@@ -623,7 +623,7 @@ label = "6. DNS"
     ]  
 
 [linux]
-label = "7. CentOS Linux"
+label = "CentOS Linux"
 
     [[linux.questions]]
     question = "Please check Linux distributions in the following OS list: "
@@ -748,7 +748,7 @@ label = "7. CentOS Linux"
     alternatives = ["ssh test", "ssh -i ~/.ssh/test.pem test", "ssh root@192.168.0.1"] 
 
 [bash]
-label = "8. Bash"
+label = "Bash"
 
     [[bash.questions]]
     question = "What shebang is wrong"
@@ -802,7 +802,7 @@ label = "8. Bash"
     alternatives = ["umask 888", "umask 777", "umask 555"] 
 
 [git]
-label = "9. Version Control with GIT"
+label = "Version Control with GIT"
 
     [[git.questions]]
     question = "Where are a pair of ssh keys put to when generating on\nWindows via ssh-keygen?"
@@ -883,7 +883,7 @@ label = "9. Version Control with GIT"
 
 
 [test]
-label = "9.1.2 Test"
+label = "Test"
 
     [[test.questions]]
     question = "Test"
@@ -891,7 +891,7 @@ label = "9.1.2 Test"
     alternatives = ["test2"] 
 
 [python]
-label = "9.1.1 Python"
+label = "Python"
 
     [[python.questions]]
     question     = "When was the first known use of the word 'quiz'"

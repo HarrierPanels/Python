@@ -1187,10 +1187,37 @@ label = "Python"
     operations. 
     """
 
+    [[python.questions]]
+    question     = "How do you create copy of the Python list"
+    answers      = ["list2 = list1.copy()"]
+    alternatives = ["list2 = list1", "list2 = copy(list1)", "copy (list1, list2)", "not possible"]
 
+    [[python.questions]]
+    question     = "How do you cast float into integer value but with understanding that\nPython has dynamic typing"
+    answers      = ["int(value)"]
+    alternatives = ["str(int(value))", "print(int(value)", "it’s already a number", "int = float"]
 
+    [[python.questions]]
+    question     = "What are the Python disadvantages"
+    answers      = ["Speed", "Scripts are required more testing", "Memory consumption"]
+    alternatives = ["Hard to understand code", "Incompatibility"]
 
-
-
-
-
+    [[python.questions]]
+    question     = "What are the Python benefits"
+    answers      = ["Interpretable", "Interactive", "Ported", "Expandable", "Object oriented"]
+    alternatives = ["Difficult"]
+    
+    [[python.questions]]
+    question     = "How to install a Python module"
+    answers      = ["pip install <module>"]
+    alternatives = ["pip <module>", "pip pull <module>", "python -m pip install <module>", "All choices"]
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

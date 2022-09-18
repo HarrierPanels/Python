@@ -2,10 +2,9 @@
 """
 @Description: EPAM DevOps Essentials Quizz & Knowledge Check tests
 @Version: v1.0
-@Author: HarrierPanels
+@Credits: Real Python, HarrierPanels
 @Website: https://aviasimulator.blogspot.com
 @GitHub: https://github.com/HarrierPanels
-@Credits: Real Python, HarrierPanels
 @Links: https://realpython.com
 """
     
@@ -55,7 +54,7 @@ def prepare_questions(path, num_questions):
     }
     topic_label = get_answers(
         question="Which topic do you want to take",
-        alternatives=sorted(topics),
+        alternatives=topics,
     )[0]
    
     questions = topics[topic_label]

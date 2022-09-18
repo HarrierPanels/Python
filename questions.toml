@@ -939,9 +939,35 @@ label = "Version Control with GIT"
     """
 
     [[git.questions]]
-    question = "What happened to the master and feature branches according to the diagram:\n"
-    answers = [":wq"]
-    alternatives = [":q!", "Ctrl+S", "Ctrl+C", "doc", "!*$%"] 
+    question = "You create a new branch 'feauture'. Then you make 3 new commits\nin the new branch. Than you return to the master branch and make a new\ncommit there. What kind of merge will happen if you git merge feature\nin the master branch"
+    answers = ["Non fast-forward merge"]
+    alternatives = ["Fast-forward merge", "Cherry-pick", "The merge is impossible"] 
+
+    [[git.questions]]
+    question = "In the master branch you have 3 commits A, B, & C. You create a new branch\n'feauture'.\nThen you make 3 new commits in the new branch D, E, & F.\nWhat will be the HEAD pointer of the master branch after you do\nthe merge feature in master"
+    answers = ["F"]
+    alternatives = ["A", "B", "C", "D", "E", "New commit G"]
+
+    [[git.questions]]
+    question = "You are in the feature branch. The project manager asks you to urgently\nfix the defect in the master branch. You have unsaved changes\nthat you are not ready to commit. What will be the procedure"
+    answers = ["Fix the content of files with conflicts, make a commit of changes"]
+    alternatives = [
+        "Fix the contents of files with conflicts, make git merge --abort", 
+        "Use git reset --hard HEAD", 
+        "Make a new copy of the project via git clone. This copy is broken\n     and will never work.", 
+    ] 
+    hint = "First you need to fix the contents of files, where there is a conflict."  
+    explanation = """
+    You could also use git merge --continue.  
+    """
+
+
+
+
+
+
+
+
 
 
 [test]

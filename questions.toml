@@ -878,7 +878,33 @@ label = "Version Control with GIT"
     answers = ["git commit --amend", "git gui, then I will select the amend last commit checkbox"]
     alternatives = ["git update", "git add", "git reset --hard HEAD^^"] 
 
+[test2]
+label = "Test"
 
+    [[test2.questions]]
+    question = "Test"
+    answers = ["Test"]
+    alternatives = ["test2"] 
+
+    [[test2.questions]]
+    question = "Test"
+    answers = ["Test"]
+    alternatives = ["test2"] 
+
+    [[test2.questions]]
+    question = "Test"
+    answers = ["Test"]
+    alternatives = ["test2"] 
+
+    [[test2.questions]]
+    question = "Test"
+    answers = ["Test"]
+    alternatives = ["test2"] 
+
+    [[test2.questions]]
+    question = "Test"
+    answers = ["Test"]
+    alternatives = ["test2"] 
 
 
 

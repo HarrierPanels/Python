@@ -878,33 +878,70 @@ label = "Version Control with GIT"
     answers = ["git commit --amend", "git gui, then I will select the amend last commit checkbox"]
     alternatives = ["git update", "git add", "git reset --hard HEAD^^"] 
 
-[test2]
-label = "Test2"
+    [[git.questions]]
+    question = "You want to delete the last commit by placing its contents in the file\nsystem. Which command will accomplish this task"
+    answers = ["git reset --mixed HEAD~1"]
+    alternatives = ["git reset --hard HEAD~1", "git reset --hard HEAD^^", "git reset --soft HEAD~1"] 
 
-    [[test2.questions]]
-    question = "Test"
-    answers = ["Test"]
-    alternatives = ["test2"] 
+    [[git.questions]]
+    question = "What is the best way to remove a commit from a remote repository"
+    answers = ["git revert"]
+    alternatives = ["git rerere", "git delete -r", "git push -f HEAD~1"] 
 
-    [[test2.questions]]
-    question = "Test"
-    answers = ["Test"]
-    alternatives = ["test2"] 
+    [[git.questions]]
+    question = "What will happen to the file song.txt if you call\n'git checkout - song.txt'"
+    answers = ["The contents of the file will be restored to the latest known\n     git version"]
+    alternatives = [
+        "Nothing will happen. Checkout is for changing branches", 
+        "The file will be deleted from disk", 
+        "We will go to the song.txt branch", 
+    ] 
 
-    [[test2.questions]]
-    question = "Test"
-    answers = ["Test"]
-    alternatives = ["test2"] 
+    [[git.questions]]
+    question = "What needs to be added to .gitignore to hide all Microsoft Word\nfiles with the extension .doc"
+    answers = ["*.doc"]
+    alternatives = ["~doc.", "/doc", "!*.doc", "doc", "!*$%"] 
 
-    [[test2.questions]]
-    question = "Test"
-    answers = ["Test"]
-    alternatives = ["test2"] 
+    [[git.questions]]
+    question = "How much does branch occupy in the file system"
+    answers = ["*41 bytes"]
+    alternatives = [
+        "Proportional to the size of the project. If the project is 10 MB\n     in one branch, then when you create the second, it will become 20 MB.", 
+        "1024 Kb", 
+    ] 
 
-    [[test2.questions]]
-    question = "Test"
-    answers = ["Test"]
-    alternatives = ["test2"] 
+    [[git.questions]]
+    question = "How to view the list of branches in the repository"
+    answers = ["git branch --all"]
+    alternatives = [
+        "git show branch", 
+        "git branch show", 
+        "git checkout branch", 
+    ] 
+
+    [[git.questions]]
+    question = "How to exit vi saving changes"
+    answers = [":wq"]
+    alternatives = [":q!", "Ctrl+S", "Ctrl+C", "doc", "!*$%"] 
+    hint = "The necessary commands begin with a colon."  
+
+    [[git.questions]]
+    question = "How to resolve a conflict when merging branches (merge conflict)"
+    answers = ["Fix the content of files with conflicts, make a commit of changes"]
+    alternatives = [
+        "Fix the contents of files with conflicts, make git merge --abort", 
+        "Use git reset --hard HEAD", 
+        "Make a new copy of the project via git clone. This copy is broken\n     and will never work.", 
+    ] 
+    hint = "First you need to fix the contents of files, where there is a conflict."  
+    explanation = """
+    You could also use git merge --continue.  
+    """
+
+    [[git.questions]]
+    question = "What happened to the master and feature branches according to the diagram:\n"
+    answers = [":wq"]
+    alternatives = [":q!", "Ctrl+S", "Ctrl+C", "doc", "!*$%"] 
 
 
 
@@ -912,7 +949,10 @@ label = "Test2"
 label = "Test"
 
     [[test.questions]]
-    question = "Test"
+    question = "
+		     A---B---C topic
+		    /	      \
+	       D---E---F---G---H master"
     answers = ["Test"]
     alternatives = ["test2"] 
 

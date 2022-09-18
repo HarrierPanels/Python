@@ -47,8 +47,9 @@ def run_test():
         else:
             print (emoji.emojize("Your score: [-----] Worst ever!"))             
    
-    print(f"\nYou got {num_correct} correct out of {num} questions.", score())   
-        
+    print(f"\nYou got {num_correct} correct out of {num} questions.")   
+    score()
+    
     # Exit
     while True:
         answer = input('\nDo you want to start over or choose another topic [y/n]: ')

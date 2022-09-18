@@ -980,7 +980,7 @@ label = "Version Control with GIT"
     ] 
 
     [[git.questions]]
-    question = "Which command can help to configure the git so that fetch and push go\nto another remote repository?"
+    question = "Which command can help you configure the git so that fetch and push go\nto another remote repository?"
     answers = ["git remote"]
     alternatives = ["git repository", "git config", "That is imposible"]
 

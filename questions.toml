@@ -971,9 +971,8 @@ label = "Version Control with GIT"
 
     [[git.questions]]
     question = "What is the difference between git stash pop and git stash apply?\nBoth will transfer the changes saved in stash back to the working\ndirectory, but what is the difference"
-    answers = ["git stash, git checkout master, fixing the defect, returning to\n     the feature branch"]
+    answers = ["pop will delete stash after returning the changes saved in it, apply -\n     will leave it"]
     alternatives = [
-        "pop will delete stash after returning the changes saved in it, apply -\n     will leave it", 
         "No difference, this is alias. the commands are identical", 
         "apply will remove stash after returning the changes saved in it,\n     pop will leave it", 
         "apply will apply stash to the project, pop - will list available\n     stashes for application", 	

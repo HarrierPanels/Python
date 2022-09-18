@@ -985,18 +985,6 @@ label = "Version Control with GIT"
     alternatives = ["git repository", "git config", "That is imposible"]
 
 
-
-
-[test]
-label = "Test"
-
-    [[test.questions]]
-    question = "     A---B---C topic
-                   /       *
-          D---E---F---G---H master"
-    answers = ["Test"]
-    alternatives = ["test2"] 
-
 [python]
 label = "Python"
 

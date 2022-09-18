@@ -33,7 +33,7 @@ def run_test():
         num_correct += ask_question(question)
 
     #print(f"\nYou got {num_correct} correct out of {num} questions")
-    if num_correct*100/num > 50 < 100:
+    if num_correct*100/num > 50 and num_correct*100/num < 100:
         print(f"\nYou got {num_correct} correct out of {num} questions. Your score: Good")
     elif num_correct == num:
         print(f"\nYou got {num_correct} correct out of {num} questions. Your score: Exellent")

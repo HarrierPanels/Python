@@ -979,7 +979,7 @@ label = "Version Control with GIT"
     ] 
 
     [[git.questions]]
-    question = "Which command can help you configure the git so that fetch and push go\nto another remote repository?"
+    question = "Which command can help you configure the git so that fetch and push go\nto another remote repository"
     answers = ["git remote"]
     alternatives = ["git repository", "git config", "That is imposible"]
 
@@ -1096,3 +1096,101 @@ label = "Python"
     Python 2.0 and Python 3.0, were released in October 2000 and December
     2008, respectively.
     """
+
+    [[python.questions]]
+    question = "Which data types used in python"
+    answers = ["All choices"]
+    alternatives = [
+        "Text Types (str)",
+        "Boolean Type (bool)",
+        "Sequence types (list, tuple, range)",
+    ]
+    explanation = """
+    Python contains Text types, Boolean, and also provides some built-in data 
+    types, in particular, dict , list , set and frozenset, and tuple. The str 
+    class is used to hold Unicode strings, and the bytes and bytearray classes 
+    are used to hold binary data.
+    """
+
+    [[python.questions]]
+    question = "In order to create variable should I set it's type"
+    answers = ["No, but I can specify or change it dynamically with casting"]
+    alternatives = [
+        "Yes when you create a variable you should provide its type",
+    ]
+    explanation = """
+    Python is a language with dynamic typing, and all variables can be casted 
+    to any selected type. 
+    """
+
+    [[python.questions]]
+    question     = "Which type is ordered, changeable, and allow duplicate values"
+    answers      = ["List"]
+    alternatives = ["Tuple", "Dictionary", "Set", "All choices"]
+    explanation = """
+    Lists are one of 4 built-in data types in Python used to store collections 
+    of data, the other 3 are Tuple, Set, and Dictionary, all with different 
+    qualities and usage. List items are ordered, changeable, and allow duplicate 
+    values. List items are indexed, the first item has index [0], the second item 
+    has index [1] etc.
+    """
+
+    [[python.questions]]
+    question     = "Which type could be unpacked"
+    answers      = ["All choices"]
+    alternatives = ["Tuple", "Dictionary", "Set", "List"]
+    explanation = """
+    Python allows a tuple (or list) of variables to appear on the left 
+    side of an assignment operation. Each variable in the tuple can 
+    receive one value (or more, if we use the * operator) from an iterable 
+    on the right side of the assignment.  
+    
+    In the context of unpacking in Python, the ** operator is called the 
+    dictionary unpacking operator. The use of this operator was extended by 
+    PEP 448. Now, we can use it in function calls, in comprehensions and 
+    generator expressions, and in displays.
+    
+    Finally, we can also use set objects in unpacking operations. However, 
+    since sets are unordered collection, the order of the assignments can 
+    be sort of incoherent and can lead to subtle bugs. 
+    """
+
+    [[python.questions]]
+    question = "Which command used for showing something on screen"
+    answers = ["print()"]
+    alternatives = [
+        "str()",
+        "cout()",
+        "show()",
+    ]
+
+    [[python.questions]]
+    question = "Which statements below are true"
+    answers = [
+        "Using for loop I can get access to each item of the list",
+        "Modules can be used to store functions",
+        "Python has automatic memory management",        
+    ]
+    alternatives = [
+        "Python nested IF statements are not allowed",
+        "Python can't be used in multi-thread computing",
+        "Python won't work on linux and macOS",
+    ]
+
+    [[python.questions]]
+    question     = "Which statement is used for logical expressions and operators"
+    answers      = ["If"]
+    alternatives = ["For", "While", "Bytes", "Int"]
+    explanation = """
+    In Python Logical operators are used on conditional statements (either 
+    True or False). They perform Logical AND, Logical OR and Logical NOT 
+    operations. 
+    """
+
+
+
+
+
+
+
+

@@ -948,12 +948,12 @@ label = "Version Control with GIT"
     """
 
     [[git.questions]]
-    question = "You create a new branch 'feauture'. Then you make 3 new commits\nin the new branch. Than you return to the master branch and make a new\ncommit there. What kind of merge will happen if you git merge feature\nin the master branch"
+    question = "You create a new branch 'feature'. Then you make 3 new commits\nin the new branch. Than you return to the master branch and make a new\ncommit there. What kind of merge will happen if you git merge feature\nin the master branch"
     answers = ["Non fast-forward merge"]
     alternatives = ["Fast-forward merge", "Cherry-pick", "The merge is impossible"] 
 
     [[git.questions]]
-    question = "In the master branch you have 3 commits A, B, & C. You create a new\nbranch 'feauture'. Then you make 3 new commits in the new branch D, E, & F.\nWhat will be the HEAD pointer of the master branch after\nyou do the merge feature in master"
+    question = "In the master branch you have 3 commits A, B, & C. You create a new\nbranch 'feature'. Then you make 3 new commits in the new branch D, E, & F.\nWhat will be the HEAD pointer of the master branch after\nyou do the merge feature in master"
     answers = ["F"]
     alternatives = ["A", "B", "C", "D", "E", "New commit G"]
 

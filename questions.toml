@@ -247,10 +247,11 @@ label = "Network Protocols"
     ] 
     hint = "SYN (synchronize): Packets that are used to initiate a connection."
     explanation = """
-    SYN - The synchronisation flag is used as a first step in establishing 
-    a three way handshake between two hosts. Only the first packet from both
-    the sender and receiver should have this flag set. The following diagram
-    illustrates a three way handshake process.  
+    SYN and ACK TCP flags are used for TCP 3 way handshake to establish 
+    connections. SYN (Synchronize sequence number). This indicates that 
+    the segment contains an ISN. During the TCP connection establishment 
+    process, TCP sends a TCP segment with the SYN flag set. Only the first 
+    packet from both the sender and receiver should have this flag set.
     """
     
     [[networkprotocols.questions]]

@@ -444,11 +444,6 @@ label = "DHCP"
     ] 
 
     [[dhcp.questions]]
-    question = "The VLAN tag length is: "
-    answers = ["4 bytes"]
-    alternatives = ["4 bits", "8 bit", "32 bytes"] 
-
-    [[dhcp.questions]]
     question = "What address allocation methods does the DHCP service use"
     answers = ["All choices"]
     alternatives = ["Manual Allocation", "Automatic Allocation", "Dynamic Allocation"] 
@@ -459,7 +454,7 @@ label = "DHCP"
     alternatives = ["multicast", "unicast", "anycast"] 
 
     [[dhcp.questions]]
-    question = "DHCP Service Message Types: "
+    question = "What are DHCP Service Message Types"
     answers = ["DHCPDISCOVER", "DHCPOFFER", "DHCPACK", "DHCPREQUEST"]
     alternatives = ["DHCPORDER", "DHCPSERVER"] 
     
@@ -488,14 +483,13 @@ label = "DHCP"
     alternatives = ["192.168.0.255", "0.0.0.0", "192.168.0.1"]    
     
     [[dhcp.questions]]
-    question = "What are benefits of Using DHCP"
+    question = "What are the benefits of Using DHCP"
     answers = [
         "DHCP minimizes configuration errors caused by manually\n     configuring an IP address, such as typos or address\n     conflicts.",
         "Centralized and automatic TCP/IP configuration for all\n     clients on the network.",
     ]
     alternatives = [
         "Improved network security.", 
-        "Service for updating operating systems and Microsoft products.", 
         "Reduction of service traffic.",
     ] 
     
@@ -514,7 +508,7 @@ label = "DHCP"
     ]    
 
     [[dhcp.questions]]
-    question = "What is the methods in which IPv6 global unicast\naddresses can be assigned without special server"
+    question = "What are the methods in which IPv6 global unicast\naddresses can be assigned without special server"
     answers = ["SLAAC and DHCPv6", "Stateless Address Autoconfiguration"]
     alternatives = ["DNS", "Stateful DHCPv6"] 
 

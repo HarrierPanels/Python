@@ -810,6 +810,47 @@ label = "Bash"
     answers = ["wc"]
     alternatives = ["word", "char", "numchar"] 
 
+    [[bash.questions]]
+    question = "I want to monitor a continuously updating log file. What command\ncan be used to most efficiently achieve this"
+    answers = ["tail –f filename"]
+    alternatives = [
+        "grep -v grep filename", 
+        "less filename", 
+        "cat filename", 
+    ] 
+    explanation = """
+    tail –f filename will cause only the default last 10 lines to be 
+    displayed on std output which continuously shows the updating part 
+    of the file. 
+    """
+
+    [[bash.questions]]
+    question = "I want to read all input to some command from file1, direct all\noutput to file2, and error to file 3, how can I achieve this"
+    answers = ["command < file1 1>file2 2>file3"]
+    alternatives = [
+        "command output='file1' input='file2' error='file3'", 
+        "command (file1 file2 file3) + (output, input, error)", 
+        "command echo$(output='file1', input='file2', error='file3')", 
+    ] 
+
+    [[bash.questions]]
+    question = "How will you emulate wc –l using awk"
+    answers = ["awk 'END {print NR}' filename"]
+    alternatives = [
+        "awk '{print}' filename", 
+        "awk '{print $1}' filename", 
+        "awk '{print $NF-1}' filename", 
+    ] 
+
+    [[bash.questions]]
+    question = "How would you find the total disk space used by user1"
+    answers = ["du -s /home/user1"]
+    alternatives = [
+        "df -h user1", 
+        "free /home/user1", 
+        "dsk -sp user1", 
+    ] 
+
 [git]
 label = "Version Control with GIT"
 
@@ -1197,7 +1238,7 @@ label = "Python"
     """
 
     [[python.questions]]
-    question     = "How do you create copy of the Python list"
+    question     = "How do you create a copy of the Python list"
     answers      = ["list2 = list1.copy()"]
     alternatives = ["list2 = list1", "list2 = copy(list1)", "copy (list1, list2)", "not possible"]
 

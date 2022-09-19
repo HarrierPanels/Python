@@ -33,7 +33,7 @@ label = "Basic networking"
     alternatives = ["Channel thruput", "Limited hard disk size", "No serial port"]
 
     [[basicnetworking.questions]]
-    question = "What of the following transmission media are usually used\nn computer networks"
+    question = "What of the following transmission media are usually used\nin computer networks"
     answers = ["All choices"]
     alternatives = ["Radio", "Twisted pair", "Optical fiber"]
 

@@ -273,7 +273,7 @@ label = "Network Protocols"
     question = "Choose the correct statements: "
     answers = [
         "Ping and traceroute use ICMP protocol", 
-        "If the recipient is out of network, the client will receive\n     a Destination unreachable message",
+        "If the recipient is out of network, the client will receive\n     an ICMP Destination unreachable message",
     ]
     alternatives = [
         "If the ICMP message is lost, it is retransmitted", 

@@ -1195,7 +1195,7 @@ label = "Python"
     [[python.questions]]
     question     = "How do you cast float into integer value but with understanding that\nPython has dynamic typing"
     answers      = ["int(value)"]
-    alternatives = ["str(int(value))", "print(int(value)", "it’s already a number", "int = float"]
+    alternatives = ["str(int(value))", "print(int(value)", "it's already a number", "int = float"]
 
     [[python.questions]]
     question     = "What are the Python disadvantages"

@@ -67,12 +67,12 @@ label = "Basic networking"
     alternatives = ["32", "128", "64"]
 
     [[basicnetworking.questions]]
-    question = "Which layer of the OSI model a MAC address is associated with"
+    question = "Which layer of the OSI model is a MAC address associated with"
     answers = ["data-link"]
     alternatives = ["physical", "network", "transport"]
 
     [[basicnetworking.questions]]
-    question = "Which layer of the OSI model an IP address is associated with"
+    question = "Which layer of the OSI model is an IP address associated with"
     answers = ["network"]
     alternatives = ["physical", "data-link", "transport"]   
 

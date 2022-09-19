@@ -715,7 +715,7 @@ label = "CentOS Linux"
     alternatives = ["organizational units", "subgroups"] 
 
     [[linux.questions]]
-    question = "754 permissions on a file mean: "
+    question = "What do 754 permissions on a file mean"
     answers = ["owner can read, write, execute; owner group can read,\n     execute; everyone else can read"]
     alternatives = [
         "owner can read, execute; owner group can read;\n     everyone else can execute", 
@@ -723,7 +723,7 @@ label = "CentOS Linux"
     ] 
 
     [[linux.questions]]
-    question = "Which tools can be used for memory diagnostics: "
+    question = "Which tools can be used for memory diagnostics"
     answers = ["top", "free"]
     alternatives = ["iostat", "netstat"] 
 
@@ -733,7 +733,7 @@ label = "CentOS Linux"
     alternatives = ["two - primary and secondary"] 
 
     [[linux.questions]]
-    question = "Which of the following directives in systemd unit file\nare required for unit to be valid: "
+    question = "Which of the following directives in systemd unit file\nare required for unit to be valid"
     answers = ["ExecStart"]
     alternatives = ["Alias", "ExecStop", "Restart"] 
 
@@ -747,7 +747,7 @@ label = "CentOS Linux"
     ] 
 
     [[linux.questions]]
-    question = "The following ssh config file is present on the system:\nHost test\nHostName 192.168.0.1\nIdentityFile ~/.ssh/test.pem\nWhich commands will allow us to ssh to 'test' host\nunder root user: "
+    question = "The following ssh config file is present on the system:\nHost test\nHostName 192.168.0.1\nIdentityFile ~/.ssh/test.pem\nWhich commands will allow us to ssh to 'test' host\nunder root user"
     answers = ["ssh -i ~/.ssh/test.pem root@192.168.0.1", "ssh root@test"]
     alternatives = ["ssh test", "ssh -i ~/.ssh/test.pem test", "ssh root@192.168.0.1"] 
 
@@ -804,6 +804,11 @@ label = "Bash"
     question = "Which of the following commands would set the default rw\npermission to all users on every file which is created in\nthe current shell"
     answers = ["umask 0000"]
     alternatives = ["umask 888", "umask 777", "umask 555"] 
+
+    [[bash.questions]]
+    question = "Command used to count the number of characters in a file is: "
+    answers = ["wc"]
+    alternatives = ["word", "char", "numchar"] 
 
 [git]
 label = "Version Control with GIT"

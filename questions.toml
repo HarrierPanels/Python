@@ -622,7 +622,7 @@ label = "DNS"
     question = "What is the nameserver that contains information specific\nto the domain name it serves"
     answers = ["Authoritative nameserver"]
     alternatives = ["Recursive resolver", "Root nameserver", "TLD nameserver"] 
-    hint = "When a recursive resolver receives a response from\n      a TLD nameserver, that response will direct the resolver to\n     that nameserver."
+    hint = "When a recursive resolver receives a response from\n      a TLD nameserver, that response will direct the resolver to\n      that nameserver."
     explanation = """
     The authoritative nameserver is usually the resolver’s last 
     step in the journey for an IP address. The authoritative 

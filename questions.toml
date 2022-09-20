@@ -414,7 +414,24 @@ label = "Concept of Subnetting"
         "192.168.1.211 - 192.168.1.224",
     ] 
     hint = "192.168.1.0/24 has 256 IPs available. For each segment select 
-            the block size that is greater than or equal to the actual requirement which is the sum of host addresses, broadcast addresses and network addresses. Make a list of subnets possible: 128, 64, 32, 16, 8, 4"
+            the block size that is greater than or equal to the actual 
+            requirement which is the sum of host addresses, broadcast 
+            addresses and network addresses. Make a list of subnets 
+            possible: 128, 64, 32, 16, 8, 4. 
+            
+            Arrange all the segments in descending order based on the 
+            block size that is from highest to lowest requirement. The 
+            highest IP available has to be allocated to highest 
+            requirement so the sales department gets 192.168.1.0/25 
+            which has 126 valid addresses that can easily be available 
+            for 85 hosts. The subnet mask used is 255.255.255.128.
+            
+            The next segment requires an IP to handle 60 hosts. The IP 
+            subnet with network number 192.168.1.128/26 is the next 
+            highest which can be assigned to 62 hosts thus fulfilling 
+            the requirement of development department. The subnet mask 
+            used is 255.255.255.192 and so forth.
+            "
     explanation = """
     SYN and ACK TCP flags are used for TCP 3 way handshake to establish 
     connections. SYN (Synchronize sequence number). This indicates that 

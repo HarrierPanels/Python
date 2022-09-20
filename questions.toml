@@ -136,7 +136,7 @@ label = "Basic networking"
         "last available address for default gateway",
         "each odd address for better balancing",
     ] 
-    hint = "In IPv4 there are two IPs that cannot be assigned to any devices."
+    hint = "In IPv4 there are two IPs that cannot be assigned\n      to any devices."
     explanation = """
     Each network or subnet has a reserved broadcast address 
     that can be used by all participants of the network to 
@@ -245,7 +245,7 @@ label = "Network Protocols"
         "the server waits for the data segment with the number of the first\n     byte specified in the Acknowledgment number field", 
         "the client and server are ready to transmit data segments",
     ] 
-    hint = "SYN (synchronize): Packets that are used to initiate a connection."
+    hint = "SYN (synchronize): Packets that are used to initiate\n      a connection."
     explanation = """
     SYN and ACK TCP flags are used for TCP 3 way handshake to establish 
     connections. SYN (Synchronize sequence number). This indicates that 
@@ -397,58 +397,6 @@ label = "Concept of Subnetting"
     """
 
     [[subnetting.questions]]
-    question = "The administrator has five departments to manage. These are\nsales department with [85] computers, purchase department with\n[30] computers, development department with [5] computers,\naccounts department with [10] computers and management department\nwith [60] computers.\n\nThere are also three WAN links that require two subnetworks with [2]\nhosts each. The administrator has IP 192.168.1.0/24, department wise.\nHe splits the network internally into subnetworks, so that each\nsubnetwork can be used by a single department. What would be the range\nfor host IPs used by the accounts department"
-    answers = ["192.168.1.225 - 192.168.1.238"]
-    alternatives = [
-        "192.168.1.10 - 192.168.1.20", 
-        "192.168.1.220 - 192.168.1.223", 
-        "192.168.1.211 - 192.168.1.224",
-    ] 
-    hint = "192.168.1.0/24 has 256 IPs available. Possible IP\nsegments: 128, 64, 32, 16, 8, 4."
-    explanation = """
-    For each segment select the block size that is greater than 
-    or equal to the actual requirement which is the sum of host 
-    addresses, broadcast addresses and network addresses. Make 
-    a list of subnets/IPs possible: /25 - 128 IPs, /26 - 64, 
-    /27 - 32, /28 - 16, /29 - 8, /30 - 4 (two subnets).
-    
-    Arrange all the segments in descending order based on the
-    block size that is from highest to lowest requirement. The
-    highest IP available has to be allocated to highest
-    requirement so the sales department gets 192.168.1.0/25
-    which has 126 valid addresses that can easily be available
-    for 85 hosts. The subnet mask used is 255.255.255.128.
-    
-    The next segment requires an IP to handle 60 hosts. The IP 
-    subnet with network number 192.168.1.128/26 is the next 
-    highest which can be assigned to 62 hosts thus fulfilling 
-    the requirement of development department. The subnet mask 
-    used is 255.255.255.192 and so forth.
-    """
-
-[bb]
-label = "Test"
-
-    [[bb.questions]]
-    question = "What does VLSM stand for"
-    answers = ["Variable Length Subnet Mask"]
-    alternatives = [
-        "Virtual Local Subnet Management", 
-        "Visual Localization Service Marker", 
-        "Virtual LAN Subnet Management",
-    ] 
-    explanation = """
-    VLSM stands for Variable Length Subnet Mask where the subnet design 
-    uses more than one mask in the same network which means more than 
-    one mask is used for different subnets of a single class A, B, C 
-    or a network. 
-    
-    It is used to increase the usability of subnets as they can be of 
-    variable size. It is also defined as the process of subnetting 
-    of a subnet.   
-    """
-
-    [[bb.questions]]
     question = "The administrator has five departments to manage. These are\nsales department with [85] computers, purchase department with\n[30] computers, development department with [5] computers,\naccounts department with [10] computers and management department\nwith [60] computers.\n\nThere are also three WAN links that require two subnetworks with [2]\nhosts each. The administrator has IP 192.168.1.0/24, department wise.\nHe splits the network internally into subnetworks, so that each\nsubnetwork can be used by a single department. What would be the range\nfor host IPs used by the accounts department"
     answers = ["192.168.1.225 - 192.168.1.238"]
     alternatives = [
@@ -674,7 +622,7 @@ label = "DNS"
     question = "What is the nameserver that contains information specific\nto the domain name it serves"
     answers = ["Authoritative nameserver"]
     alternatives = ["Recursive resolver", "Root nameserver", "TLD nameserver"] 
-    hint = "When a recursive resolver receives a response from\n     a TLD nameserver, that response will direct the resolver to\n     that nameserver."
+    hint = "When a recursive resolver receives a response from\n      a TLD nameserver, that response will direct the resolver to\n     that nameserver."
     explanation = """
     The authoritative nameserver is usually the resolver’s last 
     step in the journey for an IP address. The authoritative 
@@ -989,7 +937,7 @@ label = "Version Control with GIT"
     question = "What combination of commands in git bash will be the right one\nto add a new file to index, commit and submit to github"
     answers = ["git add, git commit, git push"]
     alternatives = ["git index, git commit, git push", "git commit, git pull", "git commit, git push"] 
-    hint = "Start by adding changes to index using the git add command."    
+    hint = "Start by adding changes to index using the\n      git add command."    
     explanation = """
     First you add files through add, then commit and synchronize the 
     local repository with the remote git push. 
@@ -1084,7 +1032,7 @@ label = "Version Control with GIT"
         "Use git reset --hard HEAD", 
         "Make a new copy of the project via git clone. This copy is broken\n     and will never work.", 
     ] 
-    hint = "First you need to fix the contents of files, where there is a conflict."  
+    hint = "First you need to fix the contents of files,\n      where there is a conflict."  
     explanation = """
     You could also use git merge --continue.  
     """
@@ -1192,7 +1140,7 @@ label = "Python"
     question     = "How can you run a Python script named epamtest.py"
     answers      = ["python epamtest.py", "python -m epamtest"]
     alternatives = ["python epamtest", "python -m epamtest.py"]
-    hint         = "One option uses the filename, and the other uses the module name."
+    hint         = "One option uses the filename, and the other uses\n      the module name."
 
     [[python.questions]]
     question     = "What's the name of the list-like data structure in TOML"
@@ -1225,7 +1173,7 @@ label = "Python"
         "By using the built-in @docstring decorator",
         "By returning a string from the function",
     ]
-    hint = "They are parsed from your code and stored on the function object."
+    hint = "They are parsed from your code and stored on the\n      function object."
     explanation = """
     Docstrings document functions and other Python objects. A docstring is a
     string literal that occurs as the first statement in a module, function,

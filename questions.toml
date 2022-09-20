@@ -449,19 +449,20 @@ label = "Test"
     """
 
     [[bb.questions]]
-    question = "The administrator has five departments to manage. These are\nsales department with [85] computers, purchase department with\n[30] computers, development department with [5] computers,\naccounts department with [10] computers and management department\nwith [60] computers.\n\nThere are also three WAN links that requiretwo subnetworks with [2]\nhosts each. The administrator has IP 192.168.1.0/24, department wise.\nHe splits the network internally into subnetworks, so that each\nsubnetwork can be used by a single department. What would be the range\nfor host IPs used by the accounts department"
+    question = "The administrator has five departments to manage. These are\nsales department with [85] computers, purchase department with\n[30] computers, development department with [5] computers,\naccounts department with [10] computers and management department\nwith [60] computers.\n\nThere are also three WAN links that require two subnetworks with [2]\nhosts each. The administrator has IP 192.168.1.0/24, department wise.\nHe splits the network internally into subnetworks, so that each\nsubnetwork can be used by a single department. What would be the range\nfor host IPs used by the accounts department"
     answers = ["192.168.1.225 - 192.168.1.238"]
     alternatives = [
         "192.168.1.10 - 192.168.1.20", 
         "192.168.1.220 - 192.168.1.223", 
         "192.168.1.211 - 192.168.1.224",
     ] 
-    hint = "192.168.1.0/24 has 256 IPs available. Possible segments: 128, 64, 32, 16, 8, 4, 4."
+    hint = "192.168.1.0/24 has 256 IPs available. Possible IP\nsegments: 128, 64, 32, 16, 8, 4."
     explanation = """
     For each segment select the block size that is greater than 
     or equal to the actual requirement which is the sum of host 
     addresses, broadcast addresses and network addresses. Make 
-    a list of subnets/IPs possible: 128, 64, 32, 16, 8, 4, 4.
+    a list of subnets/IPs possible: /25 - 128 IPs, /26 - 64, 
+    /27 - 32, /28 - 16, /29 - 8, /30 - 4 (two subnets).
     
     Arrange all the segments in descending order based on the
     block size that is from highest to lowest requirement. The

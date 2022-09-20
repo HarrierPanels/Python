@@ -397,20 +397,30 @@ label = "Concept of Subnetting"
     """
 
     [[subnetting.questions]]
-    question = "The administrator has five departments to manage. These are 
-                sales department with [85] computers, purchase department with 
-                [30] computers, development department with [5] computers, 
-                accounts department with [10] computers and management department 
-                with [60] computers. He has IP 192.168.1.0/24, department wise.
-                He splits the network internally into subnetworks, so that each 
-                subnetwork can be used by a single department."
-    answers = ["Variable Length Subnet Mask"]
+    question = "The administrator has five departments to manage. These are\n
+                sales department with [85] computers, purchase department with\n
+                [30] computers, development department with [5] computers,\n
+                accounts department with [10] computers and management department\n
+                with [60] computers. There are also three WAN links that require\n
+                two subnetworks with [2] hosts each. The administrator has IP\n 
+                192.168.1.0/24, department wise. He splits the network internally\n 
+                into subnetworks, so that each subnetwork can be used by a single\n
+                department. What would be the range for host IPs used by the\n
+                accounts department"
+    answers = ["192.168.1.225 - 192.168.1.238"]
     alternatives = [
-        "Virtual Local Subnet Management", 
-        "Visual Localization Service Marker", 
-        "Virtual LAN Subnet Management",
+        "192.168.1.10 - 192.168.1.20", 
+        "192.168.1.220 - 192.168.1.223", 
+        "192.168.1.211 - 192.168.1.224",
     ] 
-
+    hint = "192.168.1.0/24 has 256 IPs available. Possible segments: 128, 64, 32, 16, 8, 4"
+    explanation = """
+    SYN and ACK TCP flags are used for TCP 3 way handshake to establish 
+    connections. SYN (Synchronize sequence number). This indicates that 
+    the segment contains an ISN. During the TCP connection establishment 
+    process, TCP sends a TCP segment with the SYN flag set. Only the first 
+    packet from both the sender and receiver should have this flag set.
+    """
 
 [vlan]
 label = "Virtual LAN"

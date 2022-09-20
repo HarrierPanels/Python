@@ -413,7 +413,8 @@ label = "Concept of Subnetting"
         "192.168.1.220 - 192.168.1.223", 
         "192.168.1.211 - 192.168.1.224",
     ] 
-    hint = "192.168.1.0/24 has 256 IPs available. Possible segments: 128, 64, 32, 16, 8, 4"
+    hint = "192.168.1.0/24 has 256 IPs available. For each segment select 
+            the block size that is greater than or equal to the actual requirement which is the sum of host addresses, broadcast addresses and network addresses. Make a list of subnets possible: 128, 64, 32, 16, 8, 4"
     explanation = """
     SYN and ACK TCP flags are used for TCP 3 way handshake to establish 
     connections. SYN (Synchronize sequence number). This indicates that 

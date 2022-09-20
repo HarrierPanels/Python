@@ -397,16 +397,7 @@ label = "Concept of Subnetting"
     """
 
     [[subnetting.questions]]
-    question = "The administrator has five departments to manage. These are\n
-                sales department with [85] computers, purchase department with\n
-                [30] computers, development department with [5] computers,\n
-                accounts department with [10] computers and management department\n
-                with [60] computers. There are also three WAN links that require\n
-                two subnetworks with [2] hosts each. The administrator has IP\n 
-                192.168.1.0/24, department wise. He splits the network internally\n 
-                into subnetworks, so that each subnetwork can be used by a single\n
-                department. What would be the range for host IPs used by the\n
-                accounts department"
+    question = "The administrator has five departments to manage. These are\nsales department with [85] computers, purchase department with\n[30] computers, development department with [5] computers,\naccounts department with [10] computers and management department\nwith [60] computers.\n\nThere are also three WAN links that requiretwo subnetworks with [2]\nhosts each. The administrator has IP 192.168.1.0/24, department wise.\nHe splits the network internally into subnetworks, so that each\nsubnetwork can be used by a single department. What would be the range\nfor host IPs used by the accounts department"
     answers = ["192.168.1.225 - 192.168.1.238"]
     alternatives = [
         "192.168.1.10 - 192.168.1.20", 

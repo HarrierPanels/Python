@@ -404,31 +404,76 @@ label = "Concept of Subnetting"
         "192.168.1.220 - 192.168.1.223", 
         "192.168.1.211 - 192.168.1.224",
     ] 
-    hint = "192.168.1.0/24 has 256 IPs available. For each segment select 
-            the block size that is greater than or equal to the actual 
-            requirement which is the sum of host addresses, broadcast 
-            addresses and network addresses. Make a list of subnets 
-            possible: 128, 64, 32, 16, 8, 4. 
-            
-            Arrange all the segments in descending order based on the 
-            block size that is from highest to lowest requirement. The 
-            highest IP available has to be allocated to highest 
-            requirement so the sales department gets 192.168.1.0/25 
-            which has 126 valid addresses that can easily be available 
-            for 85 hosts. The subnet mask used is 255.255.255.128.
-            
-            The next segment requires an IP to handle 60 hosts. The IP 
-            subnet with network number 192.168.1.128/26 is the next 
-            highest which can be assigned to 62 hosts thus fulfilling 
-            the requirement of development department. The subnet mask 
-            used is 255.255.255.192 and so forth.
-            "
+    hint = "192.168.1.0/24 has 256 IPs available. Possible segments: 128, 64, 32, 16, 8, 4, 4."
     explanation = """
-    In Fixed length subnet mask subnetting (FLSM), all subnets are of 
-    equal size and have equal number of hosts but in VLSM the size is 
-    variable and it can have variable number of hosts thus making the 
-    IP addressing more efficient by allowing a routed system of 
-    different mask length to suit requirements.
+    For each segment select the block size that is greater than 
+    or equal to the actual requirement which is the sum of host 
+    addresses, broadcast addresses and network addresses. Make 
+    a list of subnets/IPs possible: 128, 64, 32, 16, 8, 4, 4.
+    
+    Arrange all the segments in descending order based on the
+    block size that is from highest to lowest requirement. The
+    highest IP available has to be allocated to highest
+    requirement so the sales department gets 192.168.1.0/25
+    which has 126 valid addresses that can easily be available
+    for 85 hosts. The subnet mask used is 255.255.255.128.
+    
+    The next segment requires an IP to handle 60 hosts. The IP 
+    subnet with network number 192.168.1.128/26 is the next 
+    highest which can be assigned to 62 hosts thus fulfilling 
+    the requirement of development department. The subnet mask 
+    used is 255.255.255.192 and so forth.
+    """
+
+[bb]
+label = "Test"
+
+    [[bb.questions]]
+    question = "What does VLSM stand for"
+    answers = ["Variable Length Subnet Mask"]
+    alternatives = [
+        "Virtual Local Subnet Management", 
+        "Visual Localization Service Marker", 
+        "Virtual LAN Subnet Management",
+    ] 
+    explanation = """
+    VLSM stands for Variable Length Subnet Mask where the subnet design 
+    uses more than one mask in the same network which means more than 
+    one mask is used for different subnets of a single class A, B, C 
+    or a network. 
+    
+    It is used to increase the usability of subnets as they can be of 
+    variable size. It is also defined as the process of subnetting 
+    of a subnet.   
+    """
+
+    [[bb.questions]]
+    question = "The administrator has five departments to manage. These are\nsales department with [85] computers, purchase department with\n[30] computers, development department with [5] computers,\naccounts department with [10] computers and management department\nwith [60] computers.\n\nThere are also three WAN links that requiretwo subnetworks with [2]\nhosts each. The administrator has IP 192.168.1.0/24, department wise.\nHe splits the network internally into subnetworks, so that each\nsubnetwork can be used by a single department. What would be the range\nfor host IPs used by the accounts department"
+    answers = ["192.168.1.225 - 192.168.1.238"]
+    alternatives = [
+        "192.168.1.10 - 192.168.1.20", 
+        "192.168.1.220 - 192.168.1.223", 
+        "192.168.1.211 - 192.168.1.224",
+    ] 
+    hint = "192.168.1.0/24 has 256 IPs available. Possible segments: 128, 64, 32, 16, 8, 4, 4."
+    explanation = """
+    For each segment select the block size that is greater than 
+    or equal to the actual requirement which is the sum of host 
+    addresses, broadcast addresses and network addresses. Make 
+    a list of subnets/IPs possible: 128, 64, 32, 16, 8, 4, 4.
+    
+    Arrange all the segments in descending order based on the
+    block size that is from highest to lowest requirement. The
+    highest IP available has to be allocated to highest
+    requirement so the sales department gets 192.168.1.0/25
+    which has 126 valid addresses that can easily be available
+    for 85 hosts. The subnet mask used is 255.255.255.128.
+    
+    The next segment requires an IP to handle 60 hosts. The IP 
+    subnet with network number 192.168.1.128/26 is the next 
+    highest which can be assigned to 62 hosts thus fulfilling 
+    the requirement of development department. The subnet mask 
+    used is 255.255.255.192 and so forth.
     """
 
 [vlan]

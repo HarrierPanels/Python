@@ -433,11 +433,11 @@ label = "Concept of Subnetting"
             used is 255.255.255.192 and so forth.
             "
     explanation = """
-    SYN and ACK TCP flags are used for TCP 3 way handshake to establish 
-    connections. SYN (Synchronize sequence number). This indicates that 
-    the segment contains an ISN. During the TCP connection establishment 
-    process, TCP sends a TCP segment with the SYN flag set. Only the first 
-    packet from both the sender and receiver should have this flag set.
+    In Fixed length subnet mask subnetting (FLSM), all subnets are of 
+    equal size and have equal number of hosts but in VLSM the size is 
+    variable and it can have variable number of hosts thus making the 
+    IP addressing more efficient by allowing a routed system of 
+    different mask length to suit requirements.
     """
 
 [vlan]

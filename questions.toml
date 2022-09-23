@@ -800,6 +800,123 @@ label = "CentOS Linux"
     answers = ["ssh -i ~/.ssh/test.pem root@192.168.0.1", "ssh root@test"]
     alternatives = ["ssh test", "ssh -i ~/.ssh/test.pem test", "ssh root@192.168.0.1"] 
 
+    [[linux.questions]]
+    question = "What steps are involved in creating an SSH session"
+    alternatives = [
+        "Client contacts server to initiate a connection", 
+        "The server responds by sending the client a public cryptography\n     key.", 
+        "The server negotiates parameters and opens a secure channel for\n     the client.", 
+        "The user, through their client, logs into the server.",       
+    ]
+    alternatives = [
+        "The remote client generates a new ssh key pair to ensure the\n     encrypted connection.", 
+        "Once an SSH client contacts a server it is prompted to change\n     the SSH key password.",      
+    ]
+    explanation = """
+    Event Sequence of an SSH Connection:
+    
+    A cryptographic handshake is made so that the client can 
+    verify that it is communicating with the correct server.
+
+    The transport layer of the connection between the client 
+    and remote host is encrypted using a symmetric cipher.
+
+    The client authenticates itself to the server.
+
+    The remote client interacts with the remote host over 
+    the encrypted connection.  
+    """
+
+[test]
+label = "Test"
+
+    [[test.questions]]
+    question = "What steps are involved in creating an SSH session"
+    alternatives = [
+        "Client contacts server to initiate a connection", 
+        "The server responds by sending the client a public cryptography\n     key.", 
+        "The server negotiates parameters and opens a secure channel for\n     the client.", 
+        "The user, through their client, logs into the server.",       
+    ]
+    alternatives = [
+        "The remote client generates a new ssh key pair to ensure the\n     encrypted connection.", 
+        "Once an SSH client contacts a server it is prompted to change\n     the SSH key password.",      
+    ]
+    explanation = """
+    Event Sequence of an SSH Connection:
+    
+    A cryptographic handshake is made so that the client can 
+    verify that it is communicating with the correct server.
+
+    The transport layer of the connection between the client 
+    and remote host is encrypted using a symmetric cipher.
+
+    The client authenticates itself to the server.
+
+    The remote client interacts with the remote host over 
+    the encrypted connection.  
+    """  
+    
+    [[test.questions]]
+    question = "Which of the following will give 4 lines with the 'echo output'"
+    answers = [
+        "for in in 1 2 3 4; do echo 'echo output'",
+        "for in in {1 2 3 4}; do echo 'echo output'",
+        "for in in [1 2 3 4]; do echo 'echo output'",
+    ]
+    alternatives = [
+        "for in in (1 2 3 4); do echo 'echo output'", 
+        "for in in {array[1 2 3 4]}; do echo 'echo output'", 
+        "for in in $(1 2 3 4); do echo 'echo output'", 
+        "for in in (1, 2, 3, 4); do echo 'echo output'",   
+        "for in in '1 2 3 4'; do echo 'echo output'",         
+    ]
+
+    [[test.questions]]
+    question = "What output will be for the command in the terminal: echo $0"
+    answers = ["the name of the current shell"]
+    alternatives = [
+        "You will get an error message", 
+        "An empty line", 
+        "The zero argument entered",       
+    ]
+    explanation = """
+    If the $0 special variable is used within a Bash script, it can be 
+    used to print its name and if it is used directly within the terminal, 
+    it can be used to display the name of the current shell. 
+    """  
+
+    [[test.questions]]
+    question = "The following is entered in the Bash terminal:\nset -- a b c 4 && for i in 3 4 0 5; do echo "${!i}"; done\nWhat output will be"
+    answers = ["4 lines (4th is an empty line):\n     c\n     4\n     bash\n     "]
+    alternatives = [
+        "abc45", 
+        ""4 lines (4th is an empty line):\n     a\n     b\n     c\n     4"", 
+        "Error",       
+    ]
+
+    [[test.questions]]
+    question = "How will you emulate: cat filename"
+    answers = ["while read line; do echo $line; done < filename"]
+    alternatives = [
+        "read filename", 
+        "for i in filename; do echo filename; done < filename", 
+        "printf filename", 
+    ] 
+
+
+    [[test.questions]]
+    question = "How will you emulate: cat filename"
+    answers = ["while read line; do echo $line; done < filename"]
+    alternatives = [
+        "read filename", 
+        "for i in filename; do echo $i; done < filename", 
+        "printf filename", 
+        "export filename",        
+    ] 
+
+
+
 [bash]
 label = "Bash"
 
@@ -879,7 +996,7 @@ label = "Bash"
     alternatives = [
         "command output='file1' input='file2' error='file3'", 
         "command (file1 file2 file3) + (output, input, error)", 
-        "command echo$(output='file1', input='file2', error='file3')", 
+        "command echo $(output='file1', input='file2', error='file3')", 
     ] 
 
     [[bash.questions]]
@@ -899,6 +1016,79 @@ label = "Bash"
         "free /home/user1", 
         "dsk -sp user1", 
     ] 
+
+    [[bash.questions]]
+    question = "Which of the following will give 4 lines with the 'echo output'"
+    answers = [
+        "for in in 1 2 3 4; do echo 'echo output'",
+        "for in in {1 2 3 4}; do echo 'echo output'",
+        "for in in [1 2 3 4]; do echo 'echo output'",
+    ]
+    alternatives = [
+        "for in in (1 2 3 4); do echo 'echo output'", 
+        "for in in {array[1 2 3 4]}; do echo 'echo output'", 
+        "for in in $(1 2 3 4); do echo 'echo output'", 
+        "for in in (1, 2, 3, 4); do echo 'echo output'",   
+        "for in in '1 2 3 4'; do echo 'echo output'",         
+    ]
+
+    [[bash.questions]]
+    question = "What output will be for the command in the terminal: echo $0"
+    answers = ["the name of the current shell"]
+    alternatives = [
+        "You will get an error message", 
+        "An empty line", 
+        "The zero argument entered",       
+    ]
+    explanation = """
+    If the $0 special variable is used within a Bash script, it can be 
+    used to print its name and if it is used directly within the terminal, 
+    it can be used to display the name of the current shell. 
+    """
+    
+    [[bash.questions]]
+    question = "The following is entered in the Bash terminal:\nset -- a b c 4 && for i in 3 4 0 5; do echo "${!i}"; done\nWhat will be the output"
+    answers = ["4 lines (4th is an empty line):\n     c\n     4\n     bash\n     "]
+    alternatives = [
+        "abc45", 
+        ""4 lines (4th is an empty line):\n     a\n     b\n     c\n     4"", 
+        "Error",       
+    ]
+
+    [[bash.questions]]
+    question = "How will you emulate: cat filename"
+    answers = ["while read line; do echo $line; done < filename"]
+    alternatives = [
+        "read filename", 
+        "for i in filename; do echo filename; done < filename", 
+        "printf filename", 
+        "export filename",        
+    ]  
+
+    [[bash.questions]]
+    question = "The following is entered in the terminal:\nread -r first last other <<< 'John Do 123 Main Str' | echo $other\nWhat will be the output"
+    answers = ["123 Main Str"]
+    alternatives = [
+        "Str", 
+        "John Do 123 Main Str", 
+        "Error message", 
+        "other",        
+    ] 
+    hint = "A here string is used: <<<"
+    explanation = """
+    A here string can be considered as a stripped-down form 
+    of a here document. It consists of nothing more than 
+    COMMAND <<< $WORD, where $WORD is expanded and fed to the 
+    stdin of COMMAND. 
+    """
+
+
+
+
+
+
+
+
 
 [git]
 label = "Version Control with GIT"
@@ -1255,7 +1445,7 @@ label = "Python"
     """
 
     [[python.questions]]
-    question = "Which command used for showing something on screen"
+    question = "Which command is used for showing something on screen"
     answers = ["print()"]
     alternatives = [
         "str()",

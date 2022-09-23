@@ -891,7 +891,7 @@ label = "Test"
     answers = ["4 lines (4th is an empty line):\n     c\n     4\n     bash\n     "]
     alternatives = [
         "abc45", 
-        ""4 lines (4th is an empty line):\n     a\n     b\n     c\n     4"", 
+        "4 lines (4th is an empty line):\n     a\n     b\n     c\n     4", 
         "Error",       
     ]
 

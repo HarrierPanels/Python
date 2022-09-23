@@ -802,7 +802,7 @@ label = "CentOS Linux"
 
     [[linux.questions]]
     question = "What steps are involved in creating an SSH session"
-    alternatives = [
+    answers = [
         "Client contacts server to initiate a connection", 
         "The server responds by sending the client a public cryptography\n     key.", 
         "The server negotiates parameters and opens a secure channel for\n     the client.", 
@@ -832,7 +832,7 @@ label = "Test"
 
     [[test.questions]]
     question = "What steps are involved in creating an SSH session"
-    alternatives = [
+    answers = [
         "Client contacts server to initiate a connection", 
         "The server responds by sending the client a public cryptography\n     key.", 
         "The server negotiates parameters and opens a secure channel for\n     the client.", 

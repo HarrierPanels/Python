@@ -887,7 +887,7 @@ label = "Test"
     """  
 
     [[test.questions]]
-    question = "The following is entered in the Bash terminal:\nset -- a b c 4 && for i in 3 4 0 5; do echo "${!i}"; done\nWhat output will be"
+    question = "The following is entered in the Bash terminal:\nset -- a b c 4 && for i in 3 4 0 5; do echo ${!i}; done\nWhat output will be"
     answers = ["4 lines (4th is an empty line):\n     c\n     4\n     bash\n     "]
     alternatives = [
         "abc45", 
@@ -904,16 +904,43 @@ label = "Test"
         "printf filename", 
     ] 
 
+    [[test.questions]]
+    question = "The following is entered in the terminal:\nread -r a b c <<< 'John Do 123 Main Str' && echo $c\nWhat will be the output"
+    answers = ["123 Main Str"]
+    alternatives = [
+        "Str", 
+        "John Do 123 Main Str", 
+        "Error message", 
+        "c",  
+        "An empty line",          
+    ] 
 
     [[test.questions]]
-    question = "How will you emulate: cat filename"
-    answers = ["while read line; do echo $line; done < filename"]
+    question = "The following is entered in the terminal:\ntouch file && [ -f file ] && echo 'Output 1' || echo 'Output 2'\nWhat will be the output"
+    answers = ["Output 1"]
     alternatives = [
-        "read filename", 
-        "for i in filename; do echo $i; done < filename", 
-        "printf filename", 
-        "export filename",        
+        "Output 2", 
+        "Error message", 
+        "An empty line",          
     ] 
+    explanation = """
+    [ -f file ] returns true if the file 'file' exists. 
+    """
+
+    [[test.questions]]
+    question = "A script file is created with the following code:\n#!/bin/bash\n\nIFS=$'\n'\nfor i in $(cat /etc/passwd); do\necho $i\ndone\n\nWhat will be the output after the script execution"
+    answers = ["The same as cat /etc/passwd line by line"]
+    alternatives = [
+        "Each character from the passwd file will be printed on\n     a separate line.", 
+        "Error message", 
+        "An empty line",          
+    ]
+    hint = "\n is the escape sequence for a newline, so IFS ends up\n      being set to a single newline character."    
+    explanation = """
+    IFS stands for "internal field separator". It is used by the shell 
+    to determine how to do word splitting, i. e. how to recognize word 
+    boundaries.
+    """
 
 
 
@@ -1047,11 +1074,11 @@ label = "Bash"
     """
     
     [[bash.questions]]
-    question = "The following is entered in the Bash terminal:\nset -- a b c 4 && for i in 3 4 0 5; do echo "${!i}"; done\nWhat will be the output"
+    question = "The following is entered in the Bash terminal:\nset -- a b c 4 && for i in 3 4 0 5; do echo ${!i}; done\nWhat will be the output"
     answers = ["4 lines (4th is an empty line):\n     c\n     4\n     bash\n     "]
     alternatives = [
         "abc45", 
-        ""4 lines (4th is an empty line):\n     a\n     b\n     c\n     4"", 
+        "4 lines (4th is an empty line):\n     a\n     b\n     c\n     4", 
         "Error",       
     ]
 
@@ -1066,13 +1093,14 @@ label = "Bash"
     ]  
 
     [[bash.questions]]
-    question = "The following is entered in the terminal:\nread -r first last other <<< 'John Do 123 Main Str' | echo $other\nWhat will be the output"
+    question = "The following is entered in the terminal:\nread -r a b c <<< 'John Do 123 Main Str' && echo $c\nWhat will be the output"
     answers = ["123 Main Str"]
     alternatives = [
         "Str", 
         "John Do 123 Main Str", 
         "Error message", 
-        "other",        
+        "c",  
+        "An empty line",          
     ] 
     hint = "A here string is used: <<<"
     explanation = """
@@ -1081,11 +1109,33 @@ label = "Bash"
     COMMAND <<< $WORD, where $WORD is expanded and fed to the 
     stdin of COMMAND. 
     """
+    
+    [[bash.questions]]
+    question = "The following is entered in the terminal:\ntouch file && [ -f file ] && echo 'Output 1' || echo 'Output 2'\nWhat will be the output"
+    answers = ["Output 1"]
+    alternatives = [
+        "Output 2", 
+        "Error message", 
+        "An empty line",          
+    ] 
+    explanation = """
+    [ -f file ] returns true if the file 'file' exists. 
+    """
 
-
-
-
-
+    [[bash.questions]]
+    question = "A script file is created with the following code:\n#!/bin/bash\n\nIFS=$'\n'\nfor i in $(cat /etc/passwd); do\necho $i\ndone\n\nWhat will be the output after the script execution"
+    answers = ["The same as cat /etc/passwd line by line"]
+    alternatives = [
+        "Each character from the passwd file will be printed on\n     a separate line.", 
+        "Error message", 
+        "An empty line",          
+    ]
+    hint = "\n is the escape sequence for a newline, so IFS ends up\n      being set to a single newline character."    
+    explanation = """
+    IFS stands for "internal field separator". It is used by the shell 
+    to determine how to do word splitting, i. e. how to recognize word 
+    boundaries.
+    """
 
 
 

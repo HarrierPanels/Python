@@ -1013,7 +1013,7 @@ label = "Bash"
     """
 
     [[bash.questions]]
-    question = "A script file is created with the following code:\n#!/bin/bash\n\nIFS=$'\n'\nfor i in $(cat /etc/passwd); do\necho $i\ndone\n\nWhat will be the output after the script execution"
+    question = "A script file is created with the following code:\n#!/bin/bash\n\nIFS=$'\\n'\nfor i in $(cat /etc/passwd); do\necho $i\ndone\n\nWhat will be the output after the script execution"
     answers = ["The same as cat /etc/passwd line by line"]
     alternatives = [
         "Each character from the passwd file will be printed on\n     a separate line.", 

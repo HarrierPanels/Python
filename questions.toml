@@ -827,43 +827,6 @@ label = "CentOS Linux"
     the encrypted connection.  
     """  
 
-[test]
-label = "Test"
-
-   
-    [[test.questions]]
-    question = "Which of the following will give 4 lines with the 'echo output'"
-    answers = [
-        "for in in 1 2 3 4; do echo 'echo output'; done",
-        "for in in {1 2 3 4}; do echo 'echo output'; done",
-        "for in in [1 2 3 4]; do echo 'echo output'; done",
-    ]
-    alternatives = [
-        "for in in (1 2 3 4); do echo 'echo output'; done", 
-        "for in in {array[1 2 3 4]}; do echo 'echo output'; done", 
-        "for in in $(1 2 3 4); do echo 'echo output'; done", 
-        "for in in (1, 2, 3, 4); do echo 'echo output'; done",   
-        "for in in '1 2 3 4'; do echo 'echo output'; done",         
-    ]
-
-    [[test.questions]]
-    question = "The following is entered in the Bash terminal:\nset -- a b c 4 && for i in 3 4 0 5; do echo ${!i}; done\nWhat will be the output"
-    answers = ["4 lines (4th is an empty line):\n     c\n     4\n     bash\n     "]
-    alternatives = [
-        "abc45", 
-        "4 lines:\n     a\n     b\n     c\n     4", 
-        "Error",       
-    ]
-    hint = "set --: If no arguments follow this option, then the positional\n      parameters are unset. Otherwise, the positional parameters are\n      set to the arguments, even if some of them begin with a '-'."    
-    explanation = """
-    The set command in Bash allows you to control the behavior of your 
-    scripts by managing specific flags and properties. These safeguards 
-    guarantee that your scripts are on the right track and that Bash's 
-    odd behavior does not cause problems. 
-    """
-
-
-
 [bash]
 label = "Bash"
 
@@ -1063,9 +1026,6 @@ label = "Bash"
     to determine how to do word splitting, i. e. how to recognize word 
     boundaries.
     """
-
-
-
 
 [git]
 label = "Version Control with GIT"

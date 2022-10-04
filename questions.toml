@@ -2,12 +2,12 @@
 label = "Basic networking"
 
     [[basicnetworking.questions]]
-    question = "A connecting of computers and local networks located at a remote\ndistance to share worldwide information resources is called"
+    question = "What is the name for a connecting of computers and local networks located\nat a remote distance to share worldwide information resources"
     answers = ["global network"]
     alternatives = ["corporate network", "regional network", "local network"]
 
     [[basicnetworking.questions]]
-    question = "What does network topology defines"
+    question = "What does network topology define"
     answers = [
         "A description of the network configuration, diagram\n     and connection of network devices.",
     ]
@@ -23,7 +23,7 @@ label = "Basic networking"
     alternatives = ["Straight, parallel, cross", "Topological, logical, mixed", "Vector, singularity, parallelism"]
 
     [[basicnetworking.questions]]
-    question = "What the effectiveness of computer communication usually depends on"
+    question = "What does the effectiveness of computer communication usually depend on"
     answers = ["All choices"]
     alternatives = ["Channel thruput", "Amount of the computer's RAM", "Processor productivity"]
 
@@ -33,7 +33,7 @@ label = "Basic networking"
     alternatives = ["Channel thruput", "Limited hard disk size", "No serial port"]
 
     [[basicnetworking.questions]]
-    question = "The following transmission media are usually used in computer networks"
+    question = "What of the following transmission media are usually used\nin computer networks"
     answers = ["All choices"]
     alternatives = ["Radio", "Twisted pair", "Optical fiber"]
 
@@ -48,7 +48,7 @@ label = "Basic networking"
     alternatives = ["Star", "Tree", "Ring"]
 
     [[basicnetworking.questions]]
-    question = "A MAC address is"
+    question = "What is a MAC address"
     answers = ["the physical address of the network interface"]
     alternatives = [
         "physical address of the computer",
@@ -67,12 +67,12 @@ label = "Basic networking"
     alternatives = ["32", "128", "64"]
 
     [[basicnetworking.questions]]
-    question = "A MAC address is associated with which layer of the OSI model"
+    question = "Which layer of the OSI model is a MAC address associated with"
     answers = ["data-link"]
     alternatives = ["physical", "network", "transport"]
 
     [[basicnetworking.questions]]
-    question = "An IP address is associated with which layer of the OSI model"
+    question = "Which layer of the OSI model is an IP address associated with"
     answers = ["network"]
     alternatives = ["physical", "data-link", "transport"]   
 
@@ -82,7 +82,7 @@ label = "Basic networking"
     alternatives = ["MAC address", "WEB address", "TCP address"]    
     
     [[basicnetworking.questions]]
-    question = "The prefix in the IP address indicates"
+    question = "What does the prefix in the IP address indicate"
     answers = ["the number of leading ones in the subnet mask"]
     alternatives = [
         "the number of leading zeros in the subnet mask",
@@ -96,7 +96,7 @@ label = "Basic networking"
     alternatives = ["manufacturer ID of the network adapter", "The IP address is not structured"]        
     
     [[basicnetworking.questions]]
-    question = "The number of bytes in an IPv4 address"
+    question = "What is the number of bytes in an IPv4 address"
     answers = ["4"]
     alternatives = ["32", "8", "64"]     
     
@@ -110,7 +110,7 @@ label = "Basic networking"
     ]
  
     [[basicnetworking.questions]]
-    question = "Which are the correct compact presentation forms for\nan IPv6\naddress FE80:0000:0000:0100:0000:0000:0000:0123"
+    question = "Which are the correct compact presentation forms for\nan IPv6 address FE80:0000:0000:0100:0000:0000:0000:0123"
     answers = ["FE80:0:0:100::123", "FE80:0:0:100:0:0:0:123"]
     alternatives = [
         "FE80::100::123",
@@ -136,7 +136,7 @@ label = "Basic networking"
         "last available address for default gateway",
         "each odd address for better balancing",
     ] 
-    hint = "In IPv4 there are two IPs that cannot be assigned to any devices."
+    hint = "In IPv4 there are two IPs that cannot be assigned\n      to any devices."
     explanation = """
     Each network or subnet has a reserved broadcast address 
     that can be used by all participants of the network to 
@@ -245,12 +245,13 @@ label = "Network Protocols"
         "the server waits for the data segment with the number of the first\n     byte specified in the Acknowledgment number field", 
         "the client and server are ready to transmit data segments",
     ] 
-    hint = "SYN (synchronize): Packets that are used to initiate a connection."
+    hint = "SYN (synchronize): Packets that are used to initiate\n      a connection."
     explanation = """
-    SYN - The synchronisation flag is used as a first step in establishing 
-    a three way handshake between two hosts. Only the first packet from both
-    the sender and receiver should have this flag set. The following diagram
-    illustrates a three way handshake process.  
+    SYN and ACK TCP flags are used for TCP 3 way handshake to establish 
+    connections. SYN (Synchronize sequence number). This indicates that 
+    the segment contains an ISN. During the TCP connection establishment 
+    process, TCP sends a TCP segment with the SYN flag set. Only the first 
+    packet from both the sender and receiver should have this flag set.
     """
     
     [[networkprotocols.questions]]
@@ -272,7 +273,7 @@ label = "Network Protocols"
     question = "Choose the correct statements: "
     answers = [
         "Ping and traceroute use ICMP protocol", 
-        "If the recipient is out of network, the client will receive\n     a Destination unreachable message",
+        "If the recipient is out of network, the client will receive\n     an ICMP Destination unreachable message",
     ]
     alternatives = [
         "If the ICMP message is lost, it is retransmitted", 
@@ -376,6 +377,55 @@ label = "Concept of Subnetting"
     answers = ["192.168.0.1/24", "172.168.20.111/8", "1.1.1.1/30", "100.100.1.0/15"]
     alternatives = ["10.10.256.11/12", "10.255.255.255/16"]
 
+    [[subnetting.questions]]
+    question = "What does VLSM stand for"
+    answers = ["Variable Length Subnet Mask"]
+    alternatives = [
+        "Virtual Local Subnet Management", 
+        "Visual Localization Service Marker", 
+        "Virtual LAN Subnet Management",
+    ] 
+    explanation = """
+    VLSM stands for Variable Length Subnet Mask where the subnet design 
+    uses more than one mask in the same network which means more than 
+    one mask is used for different subnets of a single class A, B, C 
+    or a network. 
+    
+    It is used to increase the usability of subnets as they can be of 
+    variable size. It is also defined as the process of subnetting 
+    of a subnet.   
+    """
+
+    [[subnetting.questions]]
+    question = "The administrator has five departments to manage. These are\nsales department with [85] computers, purchase department with\n[30] computers, development department with [5] computers,\naccounts department with [10] computers and management department\nwith [60] computers.\n\nThere are also three WAN links that require two subnetworks with [2]\nhosts each. The administrator has IP 192.168.1.0/24, department wise.\nHe splits the network internally into subnetworks, so that each\nsubnetwork can be used by a single department. What would be the range\nfor host IPs used by the accounts department"
+    answers = ["192.168.1.225 - 192.168.1.238"]
+    alternatives = [
+        "192.168.1.10 - 192.168.1.20", 
+        "192.168.1.220 - 192.168.1.223", 
+        "192.168.1.211 - 192.168.1.224",
+    ] 
+    hint = "192.168.1.0/24 has 256 IPs available. Possible IP\n      segments: 128, 64, 32, 16, 8, 4."
+    explanation = """
+    For each segment select the block size that is greater than 
+    or equal to the actual requirement which is the sum of host 
+    addresses, broadcast addresses and network addresses. Make 
+    a list of subnets/IPs possible: /25 - 128 IPs, /26 - 64, 
+    /27 - 32, /28 - 16, /29 - 8, /30 - 4 (two subnets).
+    
+    Arrange all the segments in descending order based on the
+    block size that is from highest to lowest requirement. The
+    highest IP available has to be allocated to highest
+    requirement so the sales department gets 192.168.1.0/25
+    which has 126 valid addresses that can easily be available
+    for 85 hosts. The subnet mask used is 255.255.255.128.
+    
+    The next segment requires an IP to handle 60 hosts. The IP 
+    subnet with network number 192.168.1.128/26 is the next 
+    highest which can be assigned to 62 hosts thus fulfilling 
+    the requirement of development department. The subnet mask 
+    used is 255.255.255.192 and so forth.
+    """
+
 [vlan]
 label = "Virtual LAN"
 
@@ -443,11 +493,6 @@ label = "DHCP"
     ] 
 
     [[dhcp.questions]]
-    question = "The VLAN tag length is: "
-    answers = ["4 bytes"]
-    alternatives = ["4 bits", "8 bit", "32 bytes"] 
-
-    [[dhcp.questions]]
     question = "What address allocation methods does the DHCP service use"
     answers = ["All choices"]
     alternatives = ["Manual Allocation", "Automatic Allocation", "Dynamic Allocation"] 
@@ -458,7 +503,7 @@ label = "DHCP"
     alternatives = ["multicast", "unicast", "anycast"] 
 
     [[dhcp.questions]]
-    question = "DHCP Service Message Types: "
+    question = "What are DHCP Service Message Types"
     answers = ["DHCPDISCOVER", "DHCPOFFER", "DHCPACK", "DHCPREQUEST"]
     alternatives = ["DHCPORDER", "DHCPSERVER"] 
     
@@ -487,14 +532,13 @@ label = "DHCP"
     alternatives = ["192.168.0.255", "0.0.0.0", "192.168.0.1"]    
     
     [[dhcp.questions]]
-    question = "What are benefits of Using DHCP"
+    question = "What are the benefits of Using DHCP"
     answers = [
         "DHCP minimizes configuration errors caused by manually\n     configuring an IP address, such as typos or address\n     conflicts.",
         "Centralized and automatic TCP/IP configuration for all\n     clients on the network.",
     ]
     alternatives = [
         "Improved network security.", 
-        "Service for updating operating systems and Microsoft products.", 
         "Reduction of service traffic.",
     ] 
     
@@ -513,7 +557,7 @@ label = "DHCP"
     ]    
 
     [[dhcp.questions]]
-    question = "What is the methods in which IPv6 global unicast\naddresses can be assigned without special server"
+    question = "What are the methods in which IPv6 global unicast\naddresses can be assigned without special server"
     answers = ["SLAAC and DHCPv6", "Stateless Address Autoconfiguration"]
     alternatives = ["DNS", "Stateful DHCPv6"] 
 
@@ -566,7 +610,7 @@ label = "DNS"
     [[dns.questions]]
     question = "What are the DNS Records types"
     answers = ["A", "NS", "AAAA", "SOA"]
-    alternatives = ["MAIL", "COMP"] 
+    alternatives = ["MAIL", "COMP", "BBBB"] 
 
     [[dns.questions]]
     question = "What is the DNS Record used as a 'reverse record'"
@@ -577,8 +621,8 @@ label = "DNS"
     [[dns.questions]]
     question = "What is the nameserver that contains information specific\nto the domain name it serves"
     answers = ["Authoritative nameserver"]
-    alternatives = ["MAIL", "COMP"] 
-    hint = "When a recursive resolver receives a response from\n     a TLD nameserver, that response will direct the resolver to\n     that nameserver."
+    alternatives = ["Recursive resolver", "Root nameserver", "TLD nameserver"] 
+    hint = "When a recursive resolver receives a response from\n      a TLD nameserver, that response will direct the resolver to\n      that nameserver."
     explanation = """
     The authoritative nameserver is usually the resolver’s last 
     step in the journey for an IP address. The authoritative 
@@ -597,7 +641,7 @@ label = "DNS"
     [[dns.questions]]
     question = "What is the DNS Record that maps a domain name\nto a list of mail exchange servers"
     answers = ["MX"]
-    alternatives = ["A", "NS", "PTR", "CNAME"] 
+    alternatives = ["A", "NS", "PTR", "CNAME", "MAILEX"] 
     
     [[dns.questions]]
     question = "What utility can be used to identify problems\nassociated with DNS name resolution"
@@ -605,7 +649,7 @@ label = "DNS"
     alternatives = ["Ping", "Netstat", "Tracert"] 
 
     [[dns.questions]]
-    question = "Choose the correct statements about DNS security extensions"
+    question = "Choose the correct statements about DNS security extensions: "
     answers = [
         "It strengthens authentication in DNS using digital signatures",
         "Every DNS zone has a public/private key pair",
@@ -621,6 +665,15 @@ label = "DNS"
         "Client - TLD - Root- Recursive resolver - Authoritative", 
         "Client - Recursive resolver - Authoritative - Root- TLD",
     ]  
+
+    [[dns.questions]]
+    question = "DNS is an acronym for: "
+    answers = ["Domain Name System"]
+    alternatives = [
+        "Domain Name Servers", 
+        "Domain Name Service", 
+        "Domain Name Security",
+    ]   
 
 [linux]
 label = "CentOS Linux"
@@ -711,7 +764,7 @@ label = "CentOS Linux"
     alternatives = ["organizational units", "subgroups"] 
 
     [[linux.questions]]
-    question = "754 permissions on a file mean: "
+    question = "What do 754 permissions on a file mean"
     answers = ["owner can read, write, execute; owner group can read,\n     execute; everyone else can read"]
     alternatives = [
         "owner can read, execute; owner group can read;\n     everyone else can execute", 
@@ -719,7 +772,7 @@ label = "CentOS Linux"
     ] 
 
     [[linux.questions]]
-    question = "Which tools can be used for memory diagnostics: "
+    question = "Which tools can be used for memory diagnostics"
     answers = ["top", "free"]
     alternatives = ["iostat", "netstat"] 
 
@@ -729,7 +782,7 @@ label = "CentOS Linux"
     alternatives = ["two - primary and secondary"] 
 
     [[linux.questions]]
-    question = "Which of the following directives in systemd unit file\nare required for unit to be valid: "
+    question = "Which of the following directives in systemd unit file\nare required for unit to be valid"
     answers = ["ExecStart"]
     alternatives = ["Alias", "ExecStop", "Restart"] 
 
@@ -743,9 +796,36 @@ label = "CentOS Linux"
     ] 
 
     [[linux.questions]]
-    question = "The following ssh config file is present on the system:\nHost test\nHostName 192.168.0.1\nIdentityFile ~/.ssh/test.pem\nWhich commands will allow us to ssh to 'test' host\nunder root user: "
+    question = "The following ssh config file is present on the system:\nHost test\nHostName 192.168.0.1\nIdentityFile ~/.ssh/test.pem\nWhich commands will allow us to ssh to 'test' host\nunder root user"
     answers = ["ssh -i ~/.ssh/test.pem root@192.168.0.1", "ssh root@test"]
     alternatives = ["ssh test", "ssh -i ~/.ssh/test.pem test", "ssh root@192.168.0.1"] 
+
+    [[linux.questions]]
+    question = "What steps are involved in creating an SSH session"
+    answers = [
+        "Client contacts server to initiate a connection", 
+        "The server responds by sending the client a public cryptography\n     key.", 
+        "The server negotiates parameters and opens a secure channel for\n     the client.", 
+        "The user, through their client, logs into the server.",       
+    ]
+    alternatives = [
+        "The remote client generates a new ssh key pair to ensure the\n     encrypted connection.", 
+        "Once an SSH client contacts a server it is prompted to change\n     the SSH key password.",      
+    ]
+    explanation = """
+    Event Sequence of an SSH Connection:
+    
+    A cryptographic handshake is made so that the client can 
+    verify that it is communicating with the correct server.
+
+    The transport layer of the connection between the client 
+    and remote host is encrypted using a symmetric cipher.
+
+    The client authenticates itself to the server.
+
+    The remote client interacts with the remote host over 
+    the encrypted connection.  
+    """  
 
 [bash]
 label = "Bash"
@@ -984,7 +1064,7 @@ label = "Version Control with GIT"
     question = "What combination of commands in git bash will be the right one\nto add a new file to index, commit and submit to github"
     answers = ["git add, git commit, git push"]
     alternatives = ["git index, git commit, git push", "git commit, git pull", "git commit, git push"] 
-    hint = "Start by adding changes to index using the git add command."    
+    hint = "Start by adding changes to index using the\n      git add command."    
     explanation = """
     First you add files through add, then commit and synchronize the 
     local repository with the remote git push. 
@@ -1079,18 +1159,18 @@ label = "Version Control with GIT"
         "Use git reset --hard HEAD", 
         "Make a new copy of the project via git clone. This copy is broken\n     and will never work.", 
     ] 
-    hint = "First you need to fix the contents of files, where there is a conflict."  
+    hint = "First you need to fix the contents of files,\n      where there is a conflict."  
     explanation = """
     You could also use git merge --continue.  
     """
 
     [[git.questions]]
-    question = "You create a new branch 'feauture'. Then you make 3 new commits\nin the new branch. Than you return to the master branch and make a new\ncommit there. What kind of merge will happen if you git merge feature\nin the master branch"
+    question = "You create a new branch 'feature'. Then you make 3 new commits\nin the new branch. Than you return to the master branch and make a new\ncommit there. What kind of merge will happen if you git merge feature\nin the master branch"
     answers = ["Non fast-forward merge"]
     alternatives = ["Fast-forward merge", "Cherry-pick", "The merge is impossible"] 
 
     [[git.questions]]
-    question = "In the master branch you have 3 commits A, B, & C. You create a new\nbranch 'feauture'. Then you make 3 new commits in the new branch D, E, & F.\nWhat will be the HEAD pointer of the master branch after\nyou do the merge feature in master"
+    question = "In the master branch you have 3 commits A, B, & C. You create a new\nbranch 'feature'. Then you make 3 new commits in the new branch D, E, & F.\nWhat will be the HEAD pointer of the master branch after\nyou do the merge feature in master"
     answers = ["F"]
     alternatives = ["A", "B", "C", "D", "E", "New commit G"]
 
@@ -1187,7 +1267,7 @@ label = "Python"
     question     = "How can you run a Python script named epamtest.py"
     answers      = ["python epamtest.py", "python -m epamtest"]
     alternatives = ["python epamtest", "python -m epamtest.py"]
-    hint         = "One option uses the filename, and the other uses the module name."
+    hint         = "One option uses the filename, and the other uses\n      the module name."
 
     [[python.questions]]
     question     = "What's the name of the list-like data structure in TOML"
@@ -1220,7 +1300,7 @@ label = "Python"
         "By using the built-in @docstring decorator",
         "By returning a string from the function",
     ]
-    hint = "They are parsed from your code and stored on the function object."
+    hint = "They are parsed from your code and stored on the\n      function object."
     explanation = """
     Docstrings document functions and other Python objects. A docstring is a
     string literal that occurs as the first statement in a module, function,
@@ -1302,7 +1382,7 @@ label = "Python"
     """
 
     [[python.questions]]
-    question = "Which command used for showing something on screen"
+    question = "Which command is used for showing something on screen"
     answers = ["print()"]
     alternatives = [
         "str()",
@@ -1334,7 +1414,7 @@ label = "Python"
     """
 
     [[python.questions]]
-    question     = "How do you create copy of the Python list"
+    question     = "How do you create a copy of the Python list"
     answers      = ["list2 = list1.copy()"]
     alternatives = ["list2 = list1", "list2 = copy(list1)", "copy (list1, list2)", "not possible"]
 

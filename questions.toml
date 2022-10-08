@@ -129,7 +129,7 @@ label = "Basic networking"
     ] 
  
     [[basicnetworking.questions]]
-    question = "Which addresses in any IPv4 network are always reserved?"
+    question = "Which addresses in any IPv4 network are always reserved"
     answers = ["network address", "broadcast address for this network"]
     alternatives = [
         "first available address for default gateway",
@@ -990,7 +990,8 @@ label = "Bash"
         "John Do 123 Main Str", 
         "Error message", 
         "c",  
-        "An empty line",          
+        "An empty line", 
+        "123",        
     ] 
     hint = "A here string is used: <<<"
     explanation = """
